@@ -40,11 +40,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(SWAGGER_WHITELIST).permitAll()
                 .antMatchers("/h2-console/**").permitAll()
+                .antMatchers("/").permitAll()
+                .antMatchers("/login").permitAll()
                 .antMatchers(HttpMethod.POST,"/login").permitAll()
                 .antMatchers(HttpMethod.POST,"/users").permitAll()
                 .antMatchers(HttpMethod.GET,"/users").hasAnyRole("USERS","MANAGERS")
                 .antMatchers("/managers").hasAnyRole("MANAGERS")
                 .anyRequest().authenticated()
+                .and()                                                                                                      // add httpBasic para login
+                .formLogin()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
