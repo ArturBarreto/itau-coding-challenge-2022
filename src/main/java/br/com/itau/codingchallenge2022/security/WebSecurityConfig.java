@@ -47,8 +47,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET,"/users").hasAnyRole("USERS","MANAGERS")
                 .antMatchers("/managers").hasAnyRole("MANAGERS")
                 .anyRequest().authenticated()
-                .and()                                                                                                      // add httpBasic para login
-                .formLogin()
+                // .and()                                                                                                      // add httpBasic para login
+                // .formLogin()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }

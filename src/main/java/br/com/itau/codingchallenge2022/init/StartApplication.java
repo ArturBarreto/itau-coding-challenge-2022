@@ -28,13 +28,23 @@ public class StartApplication implements CommandLineRunner {
             user.getRoles().add("MANAGERS");
             repository.save(user);
         }
-        user = repository.findByUsername("user");
+        user = repository.findByUsername("user1");
         if(user ==null){
             user = new User();
-            user.setName("USER");
-            user.setUsername("user");
+            user.setName("USER 1");
+            user.setUsername("user1");
             user.setPassword(encoder.encode("user123"));
             user.getRoles().add("USERS");
+            repository.save(user);
+        }
+        user = repository.findByUsername("user2");
+        if(user ==null){
+            user = new User();
+            user.setName("USER 2");
+            user.setUsername("user2");
+            user.setPassword(encoder.encode("user456"));
+            user.getRoles().add("USERS");
+            user.getRoles().add("MANAGERS");
             repository.save(user);
         }
     }
