@@ -15,6 +15,8 @@
 	<description>Itaú Coding Challenge 2022 - Artur Gomes Barreto</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<openapi.version>1.6.9</openapi.version>                <!-- add -->
+		<spring-cloud.version>2020.0.3</spring-cloud.version>    <!-- add -->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -49,7 +51,7 @@
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
 		</dependency>
-		<!-- OpenFeign (adicionado via Spring Initializr) -->
+		<!-- OpenFeign -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -69,6 +71,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
 			</plugin>
 		</plugins>
 	</build>
