@@ -1,9 +1,8 @@
 package br.com.itau.codingchallenge2022.controller;
 
-import br.com.itau.codingchallenge2022.model.ResultSearch;
 import br.com.itau.codingchallenge2022.model.MovieOmdb;
 import br.com.itau.codingchallenge2022.model.User;
-import br.com.itau.codingchallenge2022.repository.MovieOmdbRepository;
+import br.com.itau.codingchallenge2022.service.impl.MovieOmdbService;
 import br.com.itau.codingchallenge2022.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,11 +31,10 @@ public class UserController {
     }
 
     @Autowired
-    private MovieOmdbRepository restRepository;
+    private MovieOmdbService movieService;
 
     @GetMapping("/users/movie/{movieTitle}")
-    List<MovieOmdb> search(@PathVariable String movieTitle) {
-        ResultSearch resultSearch = this.restRepository.search(movieTitle);
-        return resultSearch.getResultList();
+    public List<MovieOmdb> search(@PathVariable String movieTitle) {
+        return movieService.search(movieTitle);
     }
 }
