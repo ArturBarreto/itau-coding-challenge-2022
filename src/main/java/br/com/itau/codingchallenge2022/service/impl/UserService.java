@@ -1,4 +1,4 @@
-package br.com.itau.codingchallenge2022.service;
+package br.com.itau.codingchallenge2022.service.impl;
 
 import br.com.itau.codingchallenge2022.model.User;
 import br.com.itau.codingchallenge2022.repository.UserRepository;
