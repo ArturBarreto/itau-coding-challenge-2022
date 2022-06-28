@@ -1,4 +1,4 @@
-package br.com.itau.codingchallenge2022.dto;
+package br.com.itau.codingchallenge2022.model;
 
 import br.com.itau.codingchallenge2022.model.MovieOmdb;
 import com.fasterxml.jackson.annotation.JsonProperty;

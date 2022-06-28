@@ -1,6 +1,6 @@
 package br.com.itau.codingchallenge2022.controller;
 
-import br.com.itau.codingchallenge2022.dto.ResultSearch;
+import br.com.itau.codingchallenge2022.model.ResultSearch;
 import br.com.itau.codingchallenge2022.model.MovieOmdb;
 import br.com.itau.codingchallenge2022.model.User;
 import br.com.itau.codingchallenge2022.repository.MovieOmdbRepository;

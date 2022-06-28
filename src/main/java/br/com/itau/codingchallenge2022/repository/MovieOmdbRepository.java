@@ -1,6 +1,6 @@
 package br.com.itau.codingchallenge2022.repository;
 
-import br.com.itau.codingchallenge2022.dto.ResultSearch;
+import br.com.itau.codingchallenge2022.model.ResultSearch;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,6 @@
 package br.com.itau.codingchallenge2022;
 
-import br.com.itau.codingchallenge2022.dto.ResultSearch;
+import br.com.itau.codingchallenge2022.model.ResultSearch;
 import br.com.itau.codingchallenge2022.repository.MovieOmdbRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
