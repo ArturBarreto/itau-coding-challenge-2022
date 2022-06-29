@@ -1,6 +1,6 @@
 package br.com.itau.codingchallenge2022.dto;
 
-public class Sessao {
+public class Session {
     private String login;
     private String token;
 

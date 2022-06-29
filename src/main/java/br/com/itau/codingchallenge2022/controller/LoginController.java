@@ -1,7 +1,7 @@
 package br.com.itau.codingchallenge2022.controller;
 
 import br.com.itau.codingchallenge2022.dto.Login;
-import br.com.itau.codingchallenge2022.dto.Sessao;
+import br.com.itau.codingchallenge2022.dto.Session;
 import br.com.itau.codingchallenge2022.model.User;
 import br.com.itau.codingchallenge2022.repository.UserRepository;
 import br.com.itau.codingchallenge2022.security.JWTCreator;
@@ -24,7 +24,7 @@ public class LoginController {
     private UserRepository repository;
 
     @PostMapping("/login")
-    public Sessao logar(@RequestBody Login login){
+    public Session logar(@RequestBody Login login){
         User user = repository.findByUsername(login.getUsername());
         if(user!=null) {
             boolean passwordOk =  encoder.matches(login.getPassword(), user.getPassword());
@@ -32,15 +32,15 @@ public class LoginController {
                 throw new RuntimeException("Senha inválida para o login: " + login.getUsername());
             }
             //Estamos enviando um objeto Sessão para retornar mais informações do usuário
-            Sessao sessao = new Sessao();
-            sessao.setLogin(user.getUsername());
+            Session session = new Session();
+            session.setLogin(user.getUsername());
 
             JWTObject jwtObject = new JWTObject();
             jwtObject.setIssuedAt(new Date(System.currentTimeMillis()));
             jwtObject.setExpiration((new Date(System.currentTimeMillis() + SecurityConfig.EXPIRATION)));
             jwtObject.setRoles(user.getRoles());
-            sessao.setToken(JWTCreator.create(SecurityConfig.PREFIX, SecurityConfig.KEY, jwtObject));
-            return sessao;
+            session.setToken(JWTCreator.create(SecurityConfig.PREFIX, SecurityConfig.KEY, jwtObject));
+            return session;
         }else {
             throw new RuntimeException("Erro ao tentar fazer login");
         }
