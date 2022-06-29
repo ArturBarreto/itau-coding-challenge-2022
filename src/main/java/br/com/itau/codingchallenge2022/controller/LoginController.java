@@ -16,6 +16,7 @@ import java.util.Date;
 
 @RestController
 public class LoginController {
+
     @Autowired
     private PasswordEncoder encoder;
     @Autowired
@@ -24,12 +25,12 @@ public class LoginController {
     private UserRepository repository;
 
     @PostMapping("/login")
-    public Session logar(@RequestBody Login login){
+    public Session login(@RequestBody Login login){
         User user = repository.findByUsername(login.getUsername());
         if(user!=null) {
             boolean passwordOk =  encoder.matches(login.getPassword(), user.getPassword());
             if (!passwordOk) {
-                throw new RuntimeException("Senha inválida para o login: " + login.getUsername());
+                throw new RuntimeException("Senha inválida para o usuário: " + login.getUsername());
             }
             //Estamos enviando um objeto Sessão para retornar mais informações do usuário
             Session session = new Session();
@@ -42,7 +43,7 @@ public class LoginController {
             session.setToken(JWTCreator.create(SecurityConfig.PREFIX, SecurityConfig.KEY, jwtObject));
             return session;
         }else {
-            throw new RuntimeException("Erro ao tentar fazer login");
+            throw new RuntimeException("Erro ao tentar fazer login!");
         }
     }
 }

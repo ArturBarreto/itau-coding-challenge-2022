@@ -14,11 +14,12 @@ public class MovieOmdb {
 
     @JsonProperty("imdbID")
     private String imdbId;
+
     @JsonProperty("Title")
     private String title;
-    private Integer year;
 
     @JsonProperty("Year")
+    private Integer year;
     public void setYear(String year) {
         this.year = convertYear(year);
     }

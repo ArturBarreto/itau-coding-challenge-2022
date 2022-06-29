@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Data
@@ -19,7 +20,7 @@ public class User {
     @Column(length = 50, nullable = false)
     private String name;
 
-    @Column(length = 20, nullable = false)
+    @Column(length = 20, nullable = false, unique = true)
     private String username;
 
     @Column(length = 100, nullable = false)
@@ -29,5 +30,4 @@ public class User {
     @CollectionTable(name = "tab_user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role_id")
     private List<String> roles = new ArrayList<>();
-
 }

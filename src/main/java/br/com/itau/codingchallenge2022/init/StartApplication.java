@@ -19,32 +19,46 @@ public class StartApplication implements CommandLineRunner {
     @Transactional
     @Override
     public void run(String... args) throws Exception {
-        User user = repository.findByUsername("admin");
+        User user = repository.findByUsername("leitor1");
         if(user==null){
             user = new User();
-            user.setName("ADMIN");
-            user.setUsername("admin");
-            user.setPassword(encoder.encode("master123"));
-            user.getRoles().add("MANAGERS");
+            user.setName("Leitor 1");
+            user.setUsername("leitor1");
+            user.setPassword(encoder.encode("leitor123"));
+            user.getRoles().add("LEITOR");
             repository.save(user);
         }
-        user = repository.findByUsername("user1");
+        user = repository.findByUsername("basico1");
         if(user ==null){
             user = new User();
-            user.setName("USER 1");
-            user.setUsername("user1");
-            user.setPassword(encoder.encode("user123"));
-            user.getRoles().add("USERS");
+            user.setName("Básico 1");
+            user.setUsername("basico1");
+            user.setPassword(encoder.encode("basico123"));
+            user.getRoles().add("LEITOR");
+            user.getRoles().add("BASICO");
             repository.save(user);
         }
-        user = repository.findByUsername("user2");
+        user = repository.findByUsername("avancado1");
         if(user ==null){
             user = new User();
-            user.setName("USER 2");
-            user.setUsername("user2");
-            user.setPassword(encoder.encode("user456"));
-            user.getRoles().add("USERS");
-            user.getRoles().add("MANAGERS");
+            user.setName("Avançado 1");
+            user.setUsername("avancado1");
+            user.setPassword(encoder.encode("avancado123"));
+            user.getRoles().add("LEITOR");
+            user.getRoles().add("BASICO");
+            user.getRoles().add("AVANCADO");
+            repository.save(user);
+        }
+        user = repository.findByUsername("moderador1");
+        if(user ==null){
+            user = new User();
+            user.setName("Moderador 1");
+            user.setUsername("moderador1");
+            user.setPassword(encoder.encode("moderador123"));
+            user.getRoles().add("LEITOR");
+            user.getRoles().add("BASICO");
+            user.getRoles().add("AVANCADO");
+            user.getRoles().add("MODERADOR");
             repository.save(user);
         }
     }

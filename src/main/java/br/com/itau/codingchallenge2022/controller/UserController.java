@@ -1,40 +1,22 @@
 package br.com.itau.codingchallenge2022.controller;
 
-import br.com.itau.codingchallenge2022.model.MovieOmdb;
 import br.com.itau.codingchallenge2022.model.User;
-import br.com.itau.codingchallenge2022.service.impl.MovieOmdbService;
 import br.com.itau.codingchallenge2022.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 public class UserController {
+
     @Autowired
     private UserService service;
 
-    @RequestMapping("/users")
+    @RequestMapping("/register")
     @PostMapping
     public void postUser(@RequestBody User user){
+        user.getRoles().clear();                // Evitar que o usuário faça um post atribuindo roles ao perfil criado
+        user.getRoles().add("LEITOR");
         service.createUser(user);
     }
 
-    @GetMapping("/users")
-    public String users() {
-        return "Authorized user";
-    }
-
-    @GetMapping("/managers")
-    public String managers() {
-        return "Authorized manager";
-    }
-
-    @Autowired
-    private MovieOmdbService movieService;
-
-    @GetMapping("/users/movie/{movieTitle}")
-    public List<MovieOmdb> search(@PathVariable String movieTitle) {
-        return movieService.search(movieTitle);
-    }
 }

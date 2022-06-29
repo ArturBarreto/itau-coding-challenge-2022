@@ -1,6 +1,5 @@
 package br.com.itau.codingchallenge2022.security;
 
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -27,14 +26,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable()
                 .addFilterAfter(new JWTFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers(HttpMethod.POST,"/login").permitAll()
-                .antMatchers(HttpMethod.POST,"/users").permitAll()
-                .antMatchers(HttpMethod.GET,"/users").hasAnyRole("USERS","MANAGERS")
-                .antMatchers(HttpMethod.GET,"/users/movie/**").hasAnyRole("MANAGERS")
-                .antMatchers("/managers").hasAnyRole("MANAGERS")
+                .antMatchers(HttpMethod.POST,"/register").permitAll()
+                .antMatchers(HttpMethod.GET,"/movie/**").hasAnyRole("LEITOR")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

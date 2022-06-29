@@ -16,7 +16,7 @@ public class UserService implements IUserService {
     @Override
     public void createUser(User user){
         String pass = user.getPassword();
-        //criptografando antes de salvar no banco
+        // Criptografia da senha
         user.setPassword(encoder.encode(pass));
         repository.save(user);
     }
