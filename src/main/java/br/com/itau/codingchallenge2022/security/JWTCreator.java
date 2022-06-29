@@ -1,7 +1,5 @@
 package br.com.itau.codingchallenge2022.security;
 
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 

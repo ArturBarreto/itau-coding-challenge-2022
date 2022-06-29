@@ -9,8 +9,7 @@ public class JWTObject {
     private Date issuedAt; //data de criação do token
     private Date expiration; // data de expiração do token
     private List<String> roles; //perfis de acesso
-
-
+    
     public String getSubject() {
         return subject;
     }
@@ -47,3 +46,4 @@ public class JWTObject {
         this.roles = Arrays.asList(roles);
     }
 }
+

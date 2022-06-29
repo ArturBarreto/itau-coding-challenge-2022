@@ -2,9 +2,12 @@ package br.com.itau.codingchallenge2022.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Arrays;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
+import lombok.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
 @EqualsAndHashCode
 public class MovieOmdb {
@@ -28,38 +31,5 @@ public class MovieOmdb {
                 .map(Integer::parseInt)
                 .findFirst()
                 .orElseThrow();
-    }
-
-    public MovieOmdb(String imdbId, String title, Integer year) {
-        this.imdbId = imdbId;
-        this.title = title;
-        this.year = year;
-    }
-
-    public MovieOmdb() {
-    }
-
-    public String getImdbId() {
-        return imdbId;
-    }
-
-    public void setImdbId(String imdbId) {
-        this.imdbId = imdbId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public void setYear(Integer year) {
-        this.year = year;
     }
 }
