@@ -9,14 +9,13 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserService service;
+    private UserService userService;
 
-    @RequestMapping("/register")
-    @PostMapping
+    @PostMapping("/register")
     public void postUser(@RequestBody User user){
         user.getRoles().clear();                // Evitar que o usuário faça um post atribuindo roles ao perfil criado
         user.getRoles().add("LEITOR");
-        service.createUser(user);
+        userService.createUser(user);
     }
 
 }
