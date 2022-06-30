@@ -40,7 +40,11 @@ public class UserService implements IUserService {
         User user = findByUsername(username);
 
         user.setPoints(user.getPoints() + 1);
-        
+
+        if (user.getPoints() == 20) {
+            user.getRoles().add("BASICO");
+        }
+
         userRepository.save(user);
     }
 
