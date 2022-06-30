@@ -1,13 +1,16 @@
 package br.com.itau.codingchallenge2022.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "tab_user")
 public class User {
@@ -31,5 +34,5 @@ public class User {
     @Column(name = "role_id")
     private List<String> roles = new ArrayList<>();
 
-    private Long points = 0L;
+    private Integer points = 0;
 }

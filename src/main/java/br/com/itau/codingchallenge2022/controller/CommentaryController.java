@@ -15,6 +15,7 @@ public class CommentaryController {
     @Autowired
     private CommentaryService commentaryService;
 
+    @PutMapping("/commentary")
     @PostMapping("/commentary")
     public void createCommentary(@RequestBody Commentary commentary) {
         commentaryService.createCommentary(commentary);

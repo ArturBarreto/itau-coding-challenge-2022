@@ -34,11 +34,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET,"/commentary").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.GET,"/commentary/movie/**").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.GET,"/commentary/user/**").hasAnyRole("LEITOR")
-                .antMatchers(HttpMethod.POST,"/commentary").hasAnyRole("BASICO")
                 .antMatchers(HttpMethod.GET,"/rating").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.GET,"/rating/movie/**").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.GET,"/rating/user/**").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.POST,"/rating/").hasAnyRole("LEITOR")
+                .antMatchers(HttpMethod.POST,"/commentary").hasAnyRole("BASICO")
+                .antMatchers(HttpMethod.GET,"/user").hasAnyRole("MODERADOR")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

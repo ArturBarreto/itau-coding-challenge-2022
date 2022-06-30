@@ -2,6 +2,7 @@ package br.com.itau.codingchallenge2022.controller;
 
 import br.com.itau.codingchallenge2022.model.MovieRating;
 import br.com.itau.codingchallenge2022.service.impl.MovieRatingService;
+import br.com.itau.codingchallenge2022.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,12 @@ public class MovieRatingController {
     @Autowired
     private MovieRatingService movieRatingService;
 
+    @Autowired
+    private UserService userService;
+
     @PostMapping("/rating")
     public void createMovieRating(@RequestBody MovieRating movieRating) {
+        userService.updatePoints(movieRating);
         movieRatingService.createMovieRating(movieRating);
     }
 
