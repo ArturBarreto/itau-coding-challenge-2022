@@ -40,6 +40,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST,"/rating/").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.POST,"/commentary").hasAnyRole("BASICO")
                 .antMatchers(HttpMethod.GET,"/user").hasAnyRole("MODERADOR")
+                .antMatchers(HttpMethod.DELETE,"/commentary/**").hasAnyRole("MODERADOR")
+                .antMatchers(HttpMethod.POST,"/commentary/**").hasAnyRole("MODERADOR")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

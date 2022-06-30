@@ -38,7 +38,7 @@ public class UserService implements IUserService {
      public void updateRoles(User user) {
          if (user.getPoints() == 20) {
              user.getRoles().add("BASICO");
-         } else if (user.getPoints() == 20) {
+         } else if (user.getPoints() == 100) {
              user.getRoles().add("AVANCADO");
          } else if (user.getPoints() == 1000) {
              user.getRoles().add("MODERADOR");

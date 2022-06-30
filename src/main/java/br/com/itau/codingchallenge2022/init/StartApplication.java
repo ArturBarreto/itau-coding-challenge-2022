@@ -26,6 +26,7 @@ public class StartApplication implements CommandLineRunner {
             user.setUsername("leitor1");
             user.setPassword(passwordEncoder.encode("leitor123"));
             user.getRoles().add("LEITOR");
+            user.setPoints(0);
             userRepository.save(user);
         }
         user = userRepository.findByUsername("basico1");
@@ -36,6 +37,7 @@ public class StartApplication implements CommandLineRunner {
             user.setPassword(passwordEncoder.encode("basico123"));
             user.getRoles().add("LEITOR");
             user.getRoles().add("BASICO");
+            user.setPoints(20);
             userRepository.save(user);
         }
         user = userRepository.findByUsername("avancado1");
@@ -47,6 +49,7 @@ public class StartApplication implements CommandLineRunner {
             user.getRoles().add("LEITOR");
             user.getRoles().add("BASICO");
             user.getRoles().add("AVANCADO");
+            user.setPoints(100);
             userRepository.save(user);
         }
         user = userRepository.findByUsername("moderador1");
@@ -59,6 +62,7 @@ public class StartApplication implements CommandLineRunner {
             user.getRoles().add("BASICO");
             user.getRoles().add("AVANCADO");
             user.getRoles().add("MODERADOR");
+            user.setPoints(1000);
             userRepository.save(user);
         }
     }

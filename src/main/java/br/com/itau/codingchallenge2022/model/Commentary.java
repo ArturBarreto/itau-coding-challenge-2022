@@ -11,7 +11,7 @@ public class Commentary {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_commentary")
-    private Integer id;
+    private Long id;
 
     @Column(length = 10, nullable = false, name = "id_imdb")
     private String idImdb;
@@ -21,5 +21,7 @@ public class Commentary {
 
     @Column(length = 250, nullable = false)
     private String commentary;
+
+    private boolean flagedAsRepeated = false;
 
 }

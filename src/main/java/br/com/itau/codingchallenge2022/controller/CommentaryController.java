@@ -40,4 +40,16 @@ public class CommentaryController {
         return new ResponseEntity<>(commentaryService.findAllByUsername(username), HttpStatus.OK);
     }
 
+    @DeleteMapping("/commentary/{commentaryId}")
+    public ResponseEntity<Void> deleteCommentaryById(@PathVariable Long commentaryId) {
+        commentaryService.deleteCommentaryById(commentaryId);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/commentary/{commentaryId}")
+    public ResponseEntity<Void> flagAsRepeated(@PathVariable Long commentaryId) {
+        commentaryService.flagCommentaryAsRepeated(commentaryId);
+        return ResponseEntity.ok().build();
+    }
+
 }

@@ -8,6 +8,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CommentaryService implements ICommentaryService {
@@ -40,5 +41,18 @@ public class CommentaryService implements ICommentaryService {
         Example<Commentary> example = Example.of(commentary);
         List<Commentary> results = commentaryRepository.findAll(example);
         return results;
+    }
+
+    @Override
+    public void deleteCommentaryById(Long commentaryId) {
+        commentaryRepository.deleteById(commentaryId);
+    }
+
+    @Override
+    public void flagCommentaryAsRepeated(Long commentaryId) {
+        Optional<Commentary> commentary = commentaryRepository.findById(commentaryId);
+        Commentary flagedCommentary = commentary.get();
+        flagedCommentary.setFlagedAsRepeated(true);
+        commentaryRepository.save(flagedCommentary);
     }
 }

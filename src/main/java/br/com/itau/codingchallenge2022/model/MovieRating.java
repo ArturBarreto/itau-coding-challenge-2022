@@ -13,7 +13,7 @@ public class MovieRating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_movie_rating")
-    private Integer idMovieRating;
+    private Long idMovieRating;
 
     @Column(length = 10, nullable = false, name = "id_imdb")
     private String idImdb;

@@ -9,4 +9,6 @@ public interface ICommentaryService {
     public List<Commentary> findAll();
     public List<Commentary> findAllByImdbId(String imdbId);
     public List<Commentary> findAllByUsername(String username);
+    public void deleteCommentaryById(Long commentaryId);
+    public void flagCommentaryAsRepeated(Long commentaryId);
 }
