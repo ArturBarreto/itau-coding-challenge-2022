@@ -1,6 +1,7 @@
 package br.com.itau.codingchallenge2022.model;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -17,8 +18,8 @@ public class MovieRating {
     @Column(length = 10, nullable = false, name = "id_imdb")
     private String idImdb;
 
-    @Column(length = 20, nullable = false, name = "id_user")
-    private Integer idUser;
+    @Column(length = 20, nullable = false, name = "user_name")
+    private String username;
 
     @Column(name = "movie_rating")
     private Long movieRating;

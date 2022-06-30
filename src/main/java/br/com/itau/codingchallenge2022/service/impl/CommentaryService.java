@@ -13,14 +13,17 @@ import java.util.List;
 public class CommentaryService implements ICommentaryService {
     @Autowired
     private CommentaryRepository commentaryRepository;
+
     @Override
     public void createCommentary(Commentary commentary){
         commentaryRepository.save(commentary);
     }
+
     @Override
     public List<Commentary> findAll(){
         return commentaryRepository.findAll();
     }
+
     @Override
     public List<Commentary> findAllByImdbId(String imdbId) {
         Commentary commentary = new Commentary();
@@ -29,10 +32,11 @@ public class CommentaryService implements ICommentaryService {
         List<Commentary> results = commentaryRepository.findAll(example);
         return results;
     }
+
     @Override
-    public List<Commentary> findAllByUserId(Integer userId) {
+    public List<Commentary> findAllByUsername(String username) {
         Commentary commentary = new Commentary();
-        commentary.setIdUser(userId);
+        commentary.setUsername(username);
         Example<Commentary> example = Example.of(commentary);
         List<Commentary> results = commentaryRepository.findAll(example);
         return results;
