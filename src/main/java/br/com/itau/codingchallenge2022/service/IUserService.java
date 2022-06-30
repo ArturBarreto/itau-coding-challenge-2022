@@ -1,5 +1,6 @@
 package br.com.itau.codingchallenge2022.service;
 
+import br.com.itau.codingchallenge2022.model.Commentary;
 import br.com.itau.codingchallenge2022.model.MovieRating;
 import br.com.itau.codingchallenge2022.model.User;
 
@@ -9,6 +10,7 @@ public interface IUserService {
     public void createUser(User user);
     public User findByUsername(String username);
     public void updateRoles(User user);
-    public void updatePoints(MovieRating movieRating);
+    public void updatePointsByRating(MovieRating movieRating);
+    public void updatePointsByCommentary(Commentary commentary);
     public List<User> findAll();
 }

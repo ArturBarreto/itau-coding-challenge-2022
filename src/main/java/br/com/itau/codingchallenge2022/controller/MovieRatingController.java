@@ -21,8 +21,8 @@ public class MovieRatingController {
 
     @PostMapping("/rating")
     public void createMovieRating(@RequestBody MovieRating movieRating) {
-        userService.updatePoints(movieRating);
         movieRatingService.createMovieRating(movieRating);
+        userService.updatePointsByRating(movieRating);
     }
 
     @GetMapping("/rating")

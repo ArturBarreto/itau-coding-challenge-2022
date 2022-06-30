@@ -1,5 +1,6 @@
 package br.com.itau.codingchallenge2022.service.impl;
 
+import br.com.itau.codingchallenge2022.model.Commentary;
 import br.com.itau.codingchallenge2022.model.MovieRating;
 import br.com.itau.codingchallenge2022.model.User;
 import br.com.itau.codingchallenge2022.repository.UserRepository;
@@ -45,8 +46,21 @@ public class UserService implements IUserService {
      }
 
     @Override
-    public void updatePoints(MovieRating movieRating) {
+    public void updatePointsByRating(MovieRating movieRating) {
         String username = movieRating.getUsername();
+
+        User user = findByUsername(username);
+
+        user.setPoints(user.getPoints() + 1);
+
+        updateRoles(user);
+
+        userRepository.save(user);
+    }
+
+    @Override
+    public void updatePointsByCommentary(Commentary commentary) {
+        String username = commentary.getUsername();
 
         User user = findByUsername(username);
 

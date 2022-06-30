@@ -2,6 +2,7 @@ package br.com.itau.codingchallenge2022.controller;
 
 import br.com.itau.codingchallenge2022.model.Commentary;
 import br.com.itau.codingchallenge2022.service.impl.CommentaryService;
+import br.com.itau.codingchallenge2022.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +16,13 @@ public class CommentaryController {
     @Autowired
     private CommentaryService commentaryService;
 
-    @PutMapping("/commentary")
+    @Autowired
+    private UserService userService;
+
     @PostMapping("/commentary")
     public void createCommentary(@RequestBody Commentary commentary) {
         commentaryService.createCommentary(commentary);
+        userService.updatePointsByCommentary(commentary);
     }
 
     @GetMapping("/commentary")
