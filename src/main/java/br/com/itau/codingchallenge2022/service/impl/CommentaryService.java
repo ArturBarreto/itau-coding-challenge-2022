@@ -8,7 +8,6 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CommentaryService implements ICommentaryService {
@@ -25,15 +24,15 @@ public class CommentaryService implements ICommentaryService {
     @Override
     public List<Commentary> findAllByImdbId(String imdbId) {
         Commentary commentary = new Commentary();
-        commentary.setImdbId(imdbId);
+        commentary.setIdImdb(imdbId);
         Example<Commentary> example = Example.of(commentary);
         List<Commentary> results = commentaryRepository.findAll(example);
         return results;
     }
     @Override
-    public List<Commentary> findAllByUsername(String username) {
+    public List<Commentary> findAllByUserId(Integer userId) {
         Commentary commentary = new Commentary();
-        commentary.setUsername(username);
+        commentary.setIdUser(userId);
         Example<Commentary> example = Example.of(commentary);
         List<Commentary> results = commentaryRepository.findAll(example);
         return results;

@@ -8,5 +8,5 @@ public interface ICommentaryService {
     public void createCommentary(Commentary commentary);
     public List<Commentary> findAll();
     public List<Commentary> findAllByImdbId(String imdbId);
-    public List<Commentary> findAllByUsername(String username);
+    public List<Commentary> findAllByUserId(Integer userId);
 }

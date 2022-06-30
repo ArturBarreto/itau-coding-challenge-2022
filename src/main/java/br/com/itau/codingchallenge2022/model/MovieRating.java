@@ -6,12 +6,13 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "tab_commentary")
-public class Commentary {
+@Table(name = "tab_movie_rating")
+public class MovieRating {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_commentary")
-    private Integer idCommentary;
+    @Column(name = "id_movie_rating")
+    private Integer idMovieRating;
 
     @Column(length = 10, nullable = false, name = "id_imdb")
     private String idImdb;
@@ -19,7 +20,7 @@ public class Commentary {
     @Column(length = 20, nullable = false, name = "id_user")
     private Integer idUser;
 
-    @Column(length = 250, nullable = false)
-    private String commentary;
+    @Column(name = "movie_rating")
+    private Long movieRating;
 
 }

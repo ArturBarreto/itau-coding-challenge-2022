@@ -10,14 +10,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService implements IUserService {
     @Autowired
-    private UserRepository repository;
+    private UserRepository userRepository;
     @Autowired
-    private PasswordEncoder encoder;
+    private PasswordEncoder passwordEncoder;
     @Override
     public void createUser(User user){
         String pass = user.getPassword();
         // Criptografia da senha
-        user.setPassword(encoder.encode(pass));
-        repository.save(user);
+        user.setPassword(passwordEncoder.encode(pass));
+        userRepository.save(user);
     }
 }

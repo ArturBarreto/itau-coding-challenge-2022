@@ -30,9 +30,9 @@ public class CommentaryController {
         return new ResponseEntity<>(commentaryService.findAllByImdbId(imdbId), HttpStatus.OK);
     }
 
-    @GetMapping("/commentary/user/{username}")
-    public ResponseEntity <List<Commentary>> findAllByUsername(@PathVariable String username){
-        return new ResponseEntity<>(commentaryService.findAllByUsername(username), HttpStatus.OK);
+    @GetMapping("/commentary/user/{userid}")
+    public ResponseEntity <List<Commentary>> findAllByUserId(@PathVariable Integer userId){
+        return new ResponseEntity<>(commentaryService.findAllByUserId(userId), HttpStatus.OK);
     }
 
 }

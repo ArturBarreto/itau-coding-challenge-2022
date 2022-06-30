@@ -13,8 +13,8 @@ public class UserController {
 
     @PostMapping("/register")
     public void postUser(@RequestBody User user){
-        user.getRoles().clear();                // Evitar que o usuário faça um post atribuindo roles ao perfil criado
-        user.getRoles().add("LEITOR");
+        user.getRoles().clear();                // Evitar que o usuário faça um POST atribuindo roles ao perfil criado
+        user.getRoles().add("LEITOR");          // Novos usuário iniciam com o perfil Leitor
         userService.createUser(user);
     }
 
