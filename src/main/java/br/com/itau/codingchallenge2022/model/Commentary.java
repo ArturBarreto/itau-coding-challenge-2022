@@ -24,4 +24,6 @@ public class Commentary {
 
     private boolean flagedAsRepeated = false;
 
+    private Long isResponseToCommenteryId = null;
+
 }

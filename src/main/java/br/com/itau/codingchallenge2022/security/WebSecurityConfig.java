@@ -26,23 +26,32 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable()
                 .addFilterAfter(new JWTFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers("/login").permitAll()
+
+                .antMatchers(HttpMethod.GET,"/").permitAll()
+                .antMatchers(HttpMethod.GET,"/login").permitAll()
+                .antMatchers(HttpMethod.GET,"/register").permitAll()
                 .antMatchers(HttpMethod.POST,"/login").permitAll()
                 .antMatchers(HttpMethod.POST,"/register").permitAll()
+
                 .antMatchers(HttpMethod.GET,"/movie/**").hasAnyRole("LEITOR")
+
                 .antMatchers(HttpMethod.GET,"/commentary").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.GET,"/commentary/movie/**").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.GET,"/commentary/user/**").hasAnyRole("LEITOR")
+
                 .antMatchers(HttpMethod.GET,"/rating").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.GET,"/rating/movie/**").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.GET,"/rating/user/**").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.POST,"/rating/").hasAnyRole("LEITOR")
+
                 .antMatchers(HttpMethod.POST,"/commentary").hasAnyRole("BASICO")
+                .antMatchers(HttpMethod.POST,"/commentary/responseto/**").hasAnyRole("BASICO")
+
                 .antMatchers(HttpMethod.GET,"/admin/users").hasAnyRole("MODERADOR")
                 .antMatchers(HttpMethod.POST,"/admin/makeusermoderator/**").hasAnyRole("MODERADOR")
                 .antMatchers(HttpMethod.DELETE,"/commentary/**").hasAnyRole("MODERADOR")
-                .antMatchers(HttpMethod.POST,"/commentary/**").hasAnyRole("MODERADOR")
+                .antMatchers(HttpMethod.POST,"/commentary/repeated/**").hasAnyRole("MODERADOR")
+
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

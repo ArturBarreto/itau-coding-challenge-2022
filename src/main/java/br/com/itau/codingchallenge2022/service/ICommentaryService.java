@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface ICommentaryService {
     public void createCommentary(Commentary commentary);
+    public void createResponseTo(Commentary commentary, Long commentaryId);
     public List<Commentary> findAll();
     public List<Commentary> findAllByImdbId(String imdbId);
     public List<Commentary> findAllByUsername(String username);

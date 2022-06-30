@@ -25,7 +25,13 @@ public class CommentaryController {
         userService.updatePointsByCommentary(commentary);
     }
 
-    @GetMapping("/commentary")
+    @PostMapping("/commentary/responseto/{commentaryId}")
+    public void createResponseTo(@RequestBody Commentary commentary, @PathVariable Long commentaryId) {
+        commentaryService.createResponseTo(commentary, commentaryId);
+        userService.updatePointsByCommentary(commentary);
+    }
+
+    @GetMapping("/commentary/")
     public ResponseEntity <List<Commentary>> findAll(){
         return new ResponseEntity<>(commentaryService.findAll(), HttpStatus.OK);
     }
@@ -46,7 +52,7 @@ public class CommentaryController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/commentary/{commentaryId}")
+    @PostMapping("/commentary/repeated/{commentaryId}")
     public ResponseEntity<Void> flagAsRepeated(@PathVariable Long commentaryId) {
         commentaryService.flagCommentaryAsRepeated(commentaryId);
         return ResponseEntity.ok().build();
