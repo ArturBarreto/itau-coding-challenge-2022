@@ -22,9 +22,14 @@ public class UserController {
         userService.createUser(user);
     }
 
-    @GetMapping("/users")
+    @GetMapping("admin/users")
     public ResponseEntity<List<User>> findAll(){
         return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
     }
 
+    @PostMapping("admin/makeusermoderator/{userId}")
+    public ResponseEntity<Void> makeUserModerator(@PathVariable Long userId) {
+        userService.makeUserModerator(userId);
+        return ResponseEntity.ok().build();
+    }
 }

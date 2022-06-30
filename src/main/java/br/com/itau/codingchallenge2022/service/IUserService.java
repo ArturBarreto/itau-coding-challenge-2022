@@ -12,5 +12,6 @@ public interface IUserService {
     public void updateRoles(User user);
     public void updatePointsByRating(MovieRating movieRating);
     public void updatePointsByCommentary(Commentary commentary);
+    public void makeUserModerator(Long userId);
     public List<User> findAll();
 }

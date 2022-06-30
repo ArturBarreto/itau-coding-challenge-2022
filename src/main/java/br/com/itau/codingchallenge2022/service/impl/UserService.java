@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService implements IUserService {
@@ -69,6 +70,14 @@ public class UserService implements IUserService {
         updateRoles(user);
 
         userRepository.save(user);
+    }
+
+    @Override
+    public void makeUserModerator(Long userId) {
+        Optional<User> user = userRepository.findById(userId);
+        User promotedUser = user.get();
+        promotedUser.getRoles().add("MODERADOR");
+        userRepository.save(promotedUser);
     }
 
     @Override
