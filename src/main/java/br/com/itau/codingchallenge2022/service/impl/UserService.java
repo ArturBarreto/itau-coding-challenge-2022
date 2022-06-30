@@ -33,6 +33,17 @@ public class UserService implements IUserService {
         return user;
      }
 
+     @Override
+     public void updateRoles(User user) {
+         if (user.getPoints() == 20) {
+             user.getRoles().add("BASICO");
+         } else if (user.getPoints() == 20) {
+             user.getRoles().add("AVANCADO");
+         } else if (user.getPoints() == 1000) {
+             user.getRoles().add("MODERADOR");
+         }
+     }
+
     @Override
     public void updatePoints(MovieRating movieRating) {
         String username = movieRating.getUsername();
@@ -41,9 +52,7 @@ public class UserService implements IUserService {
 
         user.setPoints(user.getPoints() + 1);
 
-        if (user.getPoints() == 20) {
-            user.getRoles().add("BASICO");
-        }
+        updateRoles(user);
 
         userRepository.save(user);
     }
