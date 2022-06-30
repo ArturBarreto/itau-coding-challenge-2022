@@ -37,12 +37,19 @@ public class UserService implements IUserService {
 
      @Override
      public void updateRoles(User user) {
+
          if (user.getPoints() == 20) {
-             user.getRoles().add("BASICO");
+             if (!user.getRoles().contains("BASICO")) {
+                 user.getRoles().add("BASICO");
+             }
          } else if (user.getPoints() == 100) {
-             user.getRoles().add("AVANCADO");
+             if (!user.getRoles().contains("AVANCADO")){
+                 user.getRoles().add("AVANCADO");
+             }
          } else if (user.getPoints() == 1000) {
-             user.getRoles().add("MODERADOR");
+             if (!user.getRoles().contains("MODERADOR")) {
+                 user.getRoles().add("MODERADOR");
+             }
          }
      }
 
@@ -76,7 +83,17 @@ public class UserService implements IUserService {
     public void makeUserModerator(Long userId) {
         Optional<User> user = userRepository.findById(userId);
         User promotedUser = user.get();
-        promotedUser.getRoles().add("MODERADOR");
+
+        if (!promotedUser.getRoles().contains("BASICO")) {
+            promotedUser.getRoles().add("BASICO");
+        }
+        if (!promotedUser.getRoles().contains("AVANCADO")){
+            promotedUser.getRoles().add("AVANCADO");
+        }
+        if (!promotedUser.getRoles().contains("MODERADOR")) {
+            promotedUser.getRoles().add("MODERADOR");
+        }
+
         userRepository.save(promotedUser);
     }
 
