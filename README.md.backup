@@ -114,65 +114,150 @@ POST: http://localhost:8080/login
     "token": "bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTY2OTQ1ODUsImV4cCI6MTY1NjY5ODE4NSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9MRUlUT1IiXX0.SvuCJFGft9nqhooe6Bu3N1HivFrWp0qunWeEsP8sare-VQrV-Pgehm0fqmRJPjh3EU5i_XRqrYDVXk2KTFYU1A"
 }
 ```
-*Esse token deve ser informado, sem aspas, nas demais requisições para validar suas autorizações de acesso para permitir, ou não, a execução das funcionalidades.*
-### **6.Consultar as informações de um filme no OMDB**
+*Esse token deve ser informado, sem aspas, nas demais requisições para validar suas autorizações de acesso para permitir, ou não, a execução das funcionalidades. Para isso, fornecer no Header da requisição uma Key chamada Authorization com esse Token gerado no login!*
+### **6.Consultar as informações de um filme**
 ```
-GET: http://localhost:8080/movie/NOME_DO_FILME_EM_INGLES_AQUI
+GET: http://localhost:8080/movie/NOME DO FILME EM INGLES AQUI
 ```
-*A busca pelo filme na nossa API é feita consultando a OMDb API (https://www.omdbapi.com/)*
+*A busca pelo filme na nossa API é feita consultando a OMDb API (https://www.omdbapi.com/)*.
 *Os títulos dos filmes deve ser em inglês.*
-*Para uma busca por Matrix,por exemplo, aparecerá a seguinte resposta do sistema:*
+### **7.Pesquisar todos os comentários de todos os filmes**
 ```
-[
-    {
-        "imdbID": "tt0133093",
-        "Title": "The Matrix",
-        "Year": 1999
-    },
-    {
-        "imdbID": "tt0234215",
-        "Title": "The Matrix Reloaded",
-        "Year": 2003
-    },
-    {
-        "imdbID": "tt0242653",
-        "Title": "The Matrix Revolutions",
-        "Year": 2003
-    },
-    {
-        "imdbID": "tt10838180",
-        "Title": "The Matrix Resurrections",
-        "Year": 2021
-    },
-    {
-        "imdbID": "tt0365467",
-        "Title": "Making 'The Matrix'",
-        "Year": 1999
-    },
-    {
-        "imdbID": "tt0295432",
-        "Title": "The Matrix Revisited",
-        "Year": 2001
-    },
-    {
-        "imdbID": "tt0277828",
-        "Title": "Enter the Matrix",
-        "Year": 2003
-    },
-    {
-        "imdbID": "tt9847360",
-        "Title": "A Glitch in the Matrix",
-        "Year": 2021
-    },
-    {
-        "imdbID": "tt0451118",
-        "Title": "The Matrix: Path of Neo",
-        "Year": 2005
-    },
-    {
-        "imdbID": "tt0303678",
-        "Title": "Armitage III: Dual Matrix",
-        "Year": 2002
-    }
-]
+GET: http://localhost:8080/commentary
 ```
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **8.Pesquisar todas os comentários de um filme específico por imdbId**
+```
+GET: http://localhost:8080/commentary/movie/imdbId
+```
+*Troque imdbId pelo respectivo id do filme no IMDB. Por exemplo, o imdbId do "The Matrix" é tt0133093*
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **9.Pesquisar todas os comentários postados por um usuário específico pelo seu username**
+```
+GET: http://localhost:8080/commentary/user/username
+```
+*Troque username pelo respectivo username do usuário. Por exemplo, o username do "Leitor 1" é leitor1*
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **10.Pesquisar todos as notas postadas de todos os filmes**
+```
+GET: http://localhost:8080/rating
+```
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **11.Pesquisar todos as notas postadas de um filme pelo imdbId**
+```
+GET: http://localhost:8080/rating/movie/imdbId
+```
+*Troque imdbId pelo respectivo id do filme no IMDB. Por exemplo, o imdbId do "The Matrix" é tt0133093*
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **12.Pesquisar todas as notas postadas por um usuário específico pelo seu username**
+```
+GET: http://localhost:8080/rating/user/username
+```
+*Troque username pelo respectivo username do usuário. Por exemplo, o username do "Leitor 1" é leitor1*
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **13.Postar uma nota de um filme**
+```
+POST: http://localhost:8080/rating
+```
+*Para postar uma nota de um filme, forneça um JSON com a seguinte estrutura:*
+```
+{
+    "idImdb": "tt0133093",
+    "username": "leitor",
+    "movieRating": 9
+}
+```
+*No exemplo acima, o usuário Leitor 1 está postando uma nota 9 para o filme The Matrix*
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+
+### **14.Postar um comentário de um filme**
+```
+POST: http://localhost:8080/commentary
+```
+*Para postar um comentário de um filme, forneça um JSON com a seguinte estrutura:*
+```
+{
+    "idImdb": "tt0133093",
+    "username": "basico1",
+    "commentary": "Na primeira vez que assisti, não entendi nada!"
+}
+```
+*No exemplo acima, o usuário Básico 1 está postando um comentário para o filme The Matrix*
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **15.Postar uma resposta a um comentário pelo commentaryId**
+```
+POST: http://localhost:8080/commentary/responseto/commentaryId
+```
+*Troque commentaryId pelo respectivo ID do comentário o qual se deseja responder.*
+*Para postar uma resposta a um comentário, forneça um JSON com a seguinte estrutura:*
+```
+{
+    "idImdb": "tt0133093",
+    "username": "basico2",
+    "commentary": "The Matrix é complicado mesmo. Filosofia pura."
+}
+```
+*No exemplo acima, o usuário Básico 2 está respondendo a um comentário para o filme The Matrix*
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **16.Citar um comentário pelo commentaryId**
+```
+POST: http://localhost:8080/commentary/quotingcommentary/commentaryId
+```
+*Troque commentaryId pelo respectivo ID do comentário o qual se deseja citar.*
+*Para citar um comentário, forneça um JSON com a seguinte estrutura:*
+```
+{
+    "idImdb": "tt0133093",
+    "username": "basico3",
+    "commentary": "Como o Básico 2 disse, The Matrix é filosofia pura!"
+}
+```
+*No exemplo acima, o usuário Básico 3 está citando um comentário feito pelo Básico 2 para o filme The Matrix. Considerando que esse é o comentário de ID 2, o path para esse exemplo é http://localhost:8080/commentary/quotingcommentary/2*
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **17.Marcar um comentário como "Gostei" ou "Não Gostei" pelo commentaryId**
+```
+POST: http://localhost:8080/commentary/likedislike/commentaryId
+```
+*Troque commentaryId pelo respectivo ID do comentário o qual se deseja gostar ou não gostar.*
+*Para gostar de um comentário, forneça um JSON com a seguinte estrutura:*
+```
+{
+    "username": "USER_NAME",
+    "status": "like"
+}
+```
+*Para não gostar de um comentário, forneça um JSON com a seguinte estrutura:*
+```
+{
+    "username": "USER_NAME",
+    "status": "dislike"
+}
+```
+*Troque USER_NAME pelo username do usuário que está gostando ou não gostando de um comentário.*
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **18.Obter uma lista de todos os usuários cadastrados**
+```
+GET: http://localhost:8080/admin/users
+```
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **19.Transformar um usuário em um moderador**
+```
+POST: http://localhost:8080/admin/makeusermoderator/userId
+```
+*Troque userId pelo respectivo ID do usuário o qual se deseja transformar em moderador.*
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+### **20.Deletar um comentário pelo commentaryId**
+```
+DELETE: http://localhost:8080/commentary/commentaryId
+```
+*Troque commentaryId pelo respectivo ID do comentário o qual se deseja deletar.*
+### **21.Marcar um comentário como repetido pelo commentaryId**
+```
+POST: http://localhost:8080/commentary/repeated/commentaryId
+```
+*Troque commentaryId pelo respectivo ID do comentário o qual se deseja marcar como repetido.*
+### **22.Obter uma lista de todos os comentários gostei e não gostei de todos os usuários**
+```
+GET: http://localhost:8080/commentary/likedislike
+```
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
