@@ -142,7 +142,9 @@ POST: http://localhost:8080/login
     "token": "bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTY2OTQ1ODUsImV4cCI6MTY1NjY5ODE4NSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9MRUlUT1IiXX0.SvuCJFGft9nqhooe6Bu3N1HivFrWp0qunWeEsP8sare-VQrV-Pgehm0fqmRJPjh3EU5i_XRqrYDVXk2KTFYU1A"
 }
 ```
-*Esse token deve ser informado, sem aspas, nas demais requisições para validar suas autorizações de acesso para permitir, ou não, a execução das funcionalidades. Para isso, fornecer no Header da requisição uma Key chamada Authorization com esse Token gerado no login!*
+*Esse token deve ser informado, sem aspas, nas demais requisições para validar suas autorizações de acesso para permitir, ou não, a execução das funcionalidades, a depender de seu perfil. Para isso, forneça no Header da requisição uma Key chamada Authorization com esse Token gerado no login!*
+
+*Como exemplo, o Token acima é eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTY2OTQ1ODUsImV4cCI6MTY1NjY5ODE4NSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9MRUlUT1IiXX0.SvuCJFGft9nqhooe6Bu3N1HivFrWp0qunWeEsP8sare-VQrV-Pgehm0fqmRJPjh3EU5i_XRqrYDVXk2KTFYU1A*
 ```
 Autorizados: Todos
 ```
@@ -383,7 +385,7 @@ A busca pelo filme na API é feita consultando uma API pública chamada OMDb API
 
 Os comentários e notas são salvos no sistema.
 
-Quando a API de críticas receber uma requisição de login com os dados do usuário de login e senha, ela realiza uma autenticação passando as informações de login e senha. Primeiramente, é feito uma validação se aquele login e senha estão corretos. Caso esteja, é gerado um token com as autorizações do usuário.
+Quando a API de críticas recebe uma requisição de login com os dados do usuário de login e senha, ela realiza uma autenticação passando as informações de login e senha. Primeiramente, é feito uma validação se aquele login e senha estão corretos. Caso esteja, é gerado um token com as autorizações do usuário.
 
 ## Requisitos implementados
 + Um usuário não pode logar sem ter feito um cadastro;

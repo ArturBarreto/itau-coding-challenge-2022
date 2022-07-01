@@ -142,7 +142,9 @@ POST: http://localhost:8080/login
     "token": "bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTY2OTQ1ODUsImV4cCI6MTY1NjY5ODE4NSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9MRUlUT1IiXX0.SvuCJFGft9nqhooe6Bu3N1HivFrWp0qunWeEsP8sare-VQrV-Pgehm0fqmRJPjh3EU5i_XRqrYDVXk2KTFYU1A"
 }
 ```
-*Esse token deve ser informado, sem aspas, nas demais requisições para validar suas autorizações de acesso para permitir, ou não, a execução das funcionalidades. Para isso, fornecer no Header da requisição uma Key chamada Authorization com esse Token gerado no login!*
+*Esse token deve ser informado, sem aspas, nas demais requisições para validar suas autorizações de acesso para permitir, ou não, a execução das funcionalidades, a depender de seu perfil. Para isso, forneça no Header da requisição uma Key chamada Authorization com esse Token gerado no login!*
+
+*Como exemplo, o Token acima é eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTY2OTQ1ODUsImV4cCI6MTY1NjY5ODE4NSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9MRUlUT1IiXX0.SvuCJFGft9nqhooe6Bu3N1HivFrWp0qunWeEsP8sare-VQrV-Pgehm0fqmRJPjh3EU5i_XRqrYDVXk2KTFYU1A*
 ```
 Autorizados: Todos
 ```
