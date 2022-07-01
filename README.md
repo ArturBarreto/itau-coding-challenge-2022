@@ -45,8 +45,8 @@ As tecnologias/dependências utilizadas neste projeto estão descritas abaixo. P
 ```
 GET: http://localhost:8080
 ```
-```
 *Aparecerá a seguinte resposta do sistema*
+```
 Bem-vindo(a) ao Sistema de Críticas de Filmes!
 
 Para ter acesso as funcionalidades do seu perfil, é necessário fazer login.
