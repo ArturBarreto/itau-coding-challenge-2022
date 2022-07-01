@@ -59,6 +59,9 @@ Desenvolvido por:
 Artur Gomes Barreto
 https://github.com/ArturBarreto/itau-coding-challenge-2022
 ```
+```
+Autorizados: Todos
+```
 ### **2.Instruções para realizar registro**
 ```
 GET: http://localhost:8080/register
@@ -72,6 +75,9 @@ Para registrar-se, forneça um JSON com a seguinte estrutura:
     "password": "SUA_SENHA"
 }
 ```
+```
+Autorizados: Todos
+```
 ### **3.Realizar registro**
 ```
 POST: http://localhost:8080/register
@@ -84,6 +90,9 @@ POST: http://localhost:8080/register
     "password": "SUA_SENHA"
 }
 ```
+```
+Autorizados: Todos
+```
 ### **4.Instruções para Login**
 ```
 GET: http://localhost:8080/login
@@ -95,6 +104,9 @@ Para fazer login, forneça um JSON com a seguinte estrutura:
     "username": "SEU_USER_NAME",
     "password": "SUA_SENHA"
 }
+```
+```
+Autorizados: Todos
 ```
 ### **5.Executar o Login**
 ```
@@ -115,23 +127,35 @@ POST: http://localhost:8080/login
 }
 ```
 *Esse token deve ser informado, sem aspas, nas demais requisições para validar suas autorizações de acesso para permitir, ou não, a execução das funcionalidades. Para isso, fornecer no Header da requisição uma Key chamada Authorization com esse Token gerado no login!*
+```
+Autorizados: Todos
+```
 ### **6.Consultar as informações de um filme**
 ```
 GET: http://localhost:8080/movie/NOME DO FILME EM INGLES AQUI
 ```
 *A busca pelo filme na nossa API é feita consultando a OMDb API (https://www.omdbapi.com/)*.
 *Os títulos dos filmes deve ser em inglês.*
+```
+Autorizados: Leitor, Básico, Avançado e Moderador
+```
 ### **7.Pesquisar todos os comentários de todos os filmes**
 ```
 GET: http://localhost:8080/commentary
 ```
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Leitor, Básico, Avançado e Moderador
+```
 ### **8.Pesquisar todas os comentários de um filme específico por imdbId**
 ```
 GET: http://localhost:8080/commentary/movie/imdbId
 ```
 *Troque imdbId pelo respectivo id do filme no IMDB. Por exemplo, o imdbId do "The Matrix" é tt0133093*
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Leitor, Básico, Avançado e Moderador
+```
 ### **9.Pesquisar todas os comentários postados por um usuário específico pelo seu username**
 ```
 GET: http://localhost:8080/commentary/user/username
@@ -139,11 +163,17 @@ GET: http://localhost:8080/commentary/user/username
 *Troque username pelo respectivo username do usuário. Por exemplo, o username do "Leitor 1" é leitor1*
 
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Leitor, Básico, Avançado e Moderador
+```
 ### **10.Pesquisar todos as notas postadas de todos os filmes**
 ```
 GET: http://localhost:8080/rating
 ```
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Leitor, Básico, Avançado e Moderador
+```
 ### **11.Pesquisar todos as notas postadas de um filme pelo imdbId**
 ```
 GET: http://localhost:8080/rating/movie/imdbId
@@ -151,6 +181,9 @@ GET: http://localhost:8080/rating/movie/imdbId
 *Troque imdbId pelo respectivo id do filme no IMDB. Por exemplo, o imdbId do "The Matrix" é tt0133093*
 
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Leitor, Básico, Avançado e Moderador
+```
 ### **12.Pesquisar todas as notas postadas por um usuário específico pelo seu username**
 ```
 GET: http://localhost:8080/rating/user/username
@@ -158,6 +191,9 @@ GET: http://localhost:8080/rating/user/username
 *Troque username pelo respectivo username do usuário. Por exemplo, o username do "Leitor 1" é leitor1*
 
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Leitor, Básico, Avançado e Moderador
+```
 ### **13.Postar uma nota de um filme**
 ```
 POST: http://localhost:8080/rating
@@ -173,7 +209,9 @@ POST: http://localhost:8080/rating
 *No exemplo acima, o usuário Leitor 1 está postando uma nota 9 para o filme The Matrix*
 
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
-
+```
+Autorizados: Leitor, Básico, Avançado e Moderador
+```
 ### **14.Postar um comentário de um filme**
 ```
 POST: http://localhost:8080/commentary
@@ -189,6 +227,9 @@ POST: http://localhost:8080/commentary
 *No exemplo acima, o usuário Básico 1 está postando um comentário para o filme The Matrix*
 
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Básico, Avançado e Moderador
+```
 ### **15.Postar uma resposta a um comentário pelo commentaryId**
 ```
 POST: http://localhost:8080/commentary/responseto/commentaryId
@@ -205,6 +246,9 @@ POST: http://localhost:8080/commentary/responseto/commentaryId
 *No exemplo acima, o usuário Básico 2 está respondendo a um comentário para o filme The Matrix*
 
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Básico, Avançado e Moderador
+```
 ### **16.Citar um comentário pelo commentaryId**
 ```
 POST: http://localhost:8080/commentary/quotingcommentary/commentaryId
@@ -222,6 +266,9 @@ POST: http://localhost:8080/commentary/quotingcommentary/commentaryId
 *No exemplo acima, o usuário Básico 3 está citando um comentário feito pelo Básico 2 para o filme The Matrix. Considerando que esse é o comentário de ID 2, o path para esse exemplo é http://localhost:8080/commentary/quotingcommentary/2*
 
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Avançado e Moderador
+```
 ### **17.Marcar um comentário como "Gostei" ou "Não Gostei" pelo commentaryId**
 ```
 POST: http://localhost:8080/commentary/likedislike/commentaryId
@@ -245,11 +292,17 @@ POST: http://localhost:8080/commentary/likedislike/commentaryId
 *Troque USER_NAME pelo username do usuário que está gostando ou não gostando de um comentário.*
 
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Avançado e Moderador
+```
 ### **18.Obter uma lista de todos os usuários cadastrados**
 ```
 GET: http://localhost:8080/admin/users
 ```
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Moderador
+```
 ### **19.Transformar um usuário em um moderador**
 ```
 POST: http://localhost:8080/admin/makeusermoderator/userId
@@ -257,18 +310,30 @@ POST: http://localhost:8080/admin/makeusermoderator/userId
 *Troque userId pelo respectivo ID do usuário o qual se deseja transformar em moderador.*
 
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Moderador
+```
 ### **20.Deletar um comentário pelo commentaryId**
 ```
 DELETE: http://localhost:8080/commentary/commentaryId
 ```
 *Troque commentaryId pelo respectivo ID do comentário o qual se deseja deletar.*
+```
+Autorizados: Moderador
+```
 ### **21.Marcar um comentário como repetido pelo commentaryId**
 ```
 POST: http://localhost:8080/commentary/repeated/commentaryId
 ```
 *Troque commentaryId pelo respectivo ID do comentário o qual se deseja marcar como repetido.*
+```
+Autorizados: Moderador
+```
 ### **22.Obter uma lista de todos os comentários gostei e não gostei de todos os usuários**
 ```
 GET: http://localhost:8080/commentary/likedislike
 ```
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
+```
+Autorizados: Moderador
+```
