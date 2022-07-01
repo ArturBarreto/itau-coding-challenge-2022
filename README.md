@@ -39,3 +39,23 @@ As tecnologias/dependências utilizadas neste projeto estão descritas abaixo. P
 | PostgreSQL                | Sistema gerenciador de banco de dados objeto relacional |
 | Lombok                    | Visa a diminuição de código boilerplate e maior produtividade |
 | Jackson Core              | Streaming API. Utilizado para consumir o API do OMDB |
+
+## Funcionalidades
+1.Tela de boas vindas e instruções iniciais
+```
+GET: http://localhost:8080
+```
+```
+*Aparecerá a seguinte resposta do sistema*
+Bem-vindo(a) ao Sistema de Críticas de Filmes!
+
+Para ter acesso as funcionalidades do seu perfil, é necessário fazer login.
+Para isso, acesse http://localhost:8080/login
+
+É novo por aqui? Registre-se!
+Para isso, acesse http://localhost:8080/register
+
+Desenvolvido por:
+Artur Gomes Barreto
+https://github.com/ArturBarreto/itau-coding-challenge-2022
+```
