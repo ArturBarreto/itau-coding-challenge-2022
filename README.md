@@ -383,7 +383,7 @@ A busca pelo filme na API é feita consultando uma API pública chamada OMDb API
 
 Os comentários e notas são salvos no sistema.
 
-Quando a API de críticas receber uma requisição de login com os dados do usuário de login e senha, ela realiza uma autenticação passando as informações de login e senha. Primeiramente, é feito uma validação se aquele login e senha estão corretos. Caso esteja, é gerado um token com as autorizações do usuário.
+Quando a API de críticas recebe uma requisição de login com os dados do usuário de login e senha, ela realiza uma autenticação passando as informações de login e senha. Primeiramente, é feito uma validação se aquele login e senha estão corretos. Caso esteja, é gerado um token com as autorizações do usuário.
 
 ## Requisitos implementados
 + Um usuário não pode logar sem ter feito um cadastro;
