@@ -52,8 +52,8 @@ spring.datasource.password=root
 
 ## Funcionalidades
 Nessa seção, apresentaremos as funcionalidades implementadas no sistema.
-## Gerais
-### **1.Tela de boas vindas e instruções iniciais**
+## 1.Gerais
+### **1.1.Tela de boas vindas e instruções iniciais**
 ```
 GET: http://localhost:8080
 ```
@@ -74,7 +74,7 @@ https://github.com/ArturBarreto/itau-coding-challenge-2022
 ```
 Autorizados: Todos
 ```
-### **2.Instruções para realizar registro**
+### **1.2.Instruções para realizar registro**
 ```
 GET: http://localhost:8080/register
 ```
@@ -90,7 +90,7 @@ Para registrar-se, forneça um JSON com a seguinte estrutura:
 ```
 Autorizados: Todos
 ```
-### **3.Realizar registro**
+### **1.3.Realizar registro**
 ```
 POST: http://localhost:8080/register
 ```
@@ -105,7 +105,7 @@ POST: http://localhost:8080/register
 ```
 Autorizados: Todos
 ```
-### **4.Instruções para Login**
+### **1.4.Instruções para Login**
 ```
 GET: http://localhost:8080/login
 ```
@@ -120,7 +120,7 @@ Para fazer login, forneça um JSON com a seguinte estrutura:
 ```
 Autorizados: Todos
 ```
-### **5.Executar o Login**
+### **1.5.Executar o Login**
 ```
 POST: http://localhost:8080/login
 ```
@@ -142,8 +142,8 @@ POST: http://localhost:8080/login
 ```
 Autorizados: Todos
 ```
-## Informações de Filmes
-### **6.Consultar as informações de um filme**
+## 2.Informações de Filmes
+### **2.1.Consultar as informações de um filme**
 ```
 GET: http://localhost:8080/movie/NOME DO FILME EM INGLES AQUI
 ```
@@ -153,7 +153,7 @@ GET: http://localhost:8080/movie/NOME DO FILME EM INGLES AQUI
 Autorizados: Leitor, Básico, Avançado e Moderador
 ```
 ## Comentários
-### **7.Pesquisar todos os comentários de todos os filmes**
+### **2.2.Pesquisar todos os comentários de todos os filmes**
 ```
 GET: http://localhost:8080/commentary
 ```
@@ -161,7 +161,7 @@ GET: http://localhost:8080/commentary
 ```
 Autorizados: Leitor, Básico, Avançado e Moderador
 ```
-### **8.Pesquisar todas os comentários de um filme específico por imdbId**
+### **2.3.Pesquisar todas os comentários de um filme específico por imdbId**
 ```
 GET: http://localhost:8080/commentary/movie/imdbId
 ```
@@ -170,7 +170,7 @@ GET: http://localhost:8080/commentary/movie/imdbId
 ```
 Autorizados: Leitor, Básico, Avançado e Moderador
 ```
-### **9.Pesquisar todas os comentários postados por um usuário específico pelo seu username**
+### **2.4.Pesquisar todas os comentários postados por um usuário específico pelo seu username**
 ```
 GET: http://localhost:8080/commentary/user/username
 ```
@@ -180,7 +180,7 @@ GET: http://localhost:8080/commentary/user/username
 ```
 Autorizados: Leitor, Básico, Avançado e Moderador
 ```
-### **10.Postar um comentário de um filme**
+### **2.5.Postar um comentário de um filme**
 ```
 POST: http://localhost:8080/commentary
 ```
@@ -198,7 +198,7 @@ POST: http://localhost:8080/commentary
 ```
 Autorizados: Básico, Avançado e Moderador
 ```
-### **11.Postar uma resposta a um comentário pelo commentaryId**
+### **2.6.Postar uma resposta a um comentário pelo commentaryId**
 ```
 POST: http://localhost:8080/commentary/responseto/commentaryId
 ```
@@ -217,7 +217,7 @@ POST: http://localhost:8080/commentary/responseto/commentaryId
 ```
 Autorizados: Básico, Avançado e Moderador
 ```
-### **12.Citar um comentário pelo commentaryId**
+### **2.7.Citar um comentário pelo commentaryId**
 ```
 POST: http://localhost:8080/commentary/quotingcommentary/commentaryId
 ```
@@ -237,7 +237,7 @@ POST: http://localhost:8080/commentary/quotingcommentary/commentaryId
 ```
 Autorizados: Avançado e Moderador
 ```
-### **13.Marcar um comentário como "Gostei" ou "Não Gostei" pelo commentaryId**
+### **2.8.Marcar um comentário como "Gostei" ou "Não Gostei" pelo commentaryId**
 ```
 POST: http://localhost:8080/commentary/likedislike/commentaryId
 ```
@@ -263,7 +263,7 @@ POST: http://localhost:8080/commentary/likedislike/commentaryId
 ```
 Autorizados: Avançado e Moderador
 ```
-### **14.Deletar um comentário pelo commentaryId**
+### **2.9.Deletar um comentário pelo commentaryId**
 ```
 DELETE: http://localhost:8080/commentary/commentaryId
 ```
@@ -271,7 +271,7 @@ DELETE: http://localhost:8080/commentary/commentaryId
 ```
 Autorizados: Moderador
 ```
-### **15.Marcar um comentário como repetido pelo commentaryId**
+### **2.10.Marcar um comentário como repetido pelo commentaryId**
 ```
 POST: http://localhost:8080/commentary/repeated/commentaryId
 ```
@@ -279,7 +279,7 @@ POST: http://localhost:8080/commentary/repeated/commentaryId
 ```
 Autorizados: Moderador
 ```
-### **16.Obter uma lista de todos os comentários gostei e não gostei de todos os usuários**
+### **2.11.Obter uma lista de todos os comentários gostei e não gostei de todos os usuários**
 ```
 GET: http://localhost:8080/commentary/likedislike
 ```
@@ -287,8 +287,8 @@ GET: http://localhost:8080/commentary/likedislike
 ```
 Autorizados: Moderador
 ```
-## Notas de Filmes
-### **17.Pesquisar todos as notas postadas de todos os filmes**
+## 3.Notas de Filmes
+### **3.1.Pesquisar todos as notas postadas de todos os filmes**
 ```
 GET: http://localhost:8080/rating
 ```
@@ -296,7 +296,7 @@ GET: http://localhost:8080/rating
 ```
 Autorizados: Leitor, Básico, Avançado e Moderador
 ```
-### **18.Pesquisar todos as notas postadas de um filme pelo imdbId**
+### **3.2.Pesquisar todos as notas postadas de um filme pelo imdbId**
 ```
 GET: http://localhost:8080/rating/movie/imdbId
 ```
@@ -306,7 +306,7 @@ GET: http://localhost:8080/rating/movie/imdbId
 ```
 Autorizados: Leitor, Básico, Avançado e Moderador
 ```
-### **19.Pesquisar todas as notas postadas por um usuário específico pelo seu username**
+### **3.3.Pesquisar todas as notas postadas por um usuário específico pelo seu username**
 ```
 GET: http://localhost:8080/rating/user/username
 ```
@@ -316,7 +316,7 @@ GET: http://localhost:8080/rating/user/username
 ```
 Autorizados: Leitor, Básico, Avançado e Moderador
 ```
-### **20.Postar uma nota de um filme**
+### **3.4.Postar uma nota de um filme**
 ```
 POST: http://localhost:8080/rating
 ```
@@ -334,8 +334,8 @@ POST: http://localhost:8080/rating
 ```
 Autorizados: Leitor, Básico, Avançado e Moderador
 ```
-## Moderadores
-### **21.Obter uma lista de todos os usuários cadastrados**
+## 4.Moderadores
+### **4.1.Obter uma lista de todos os usuários cadastrados**
 ```
 GET: http://localhost:8080/admin/users
 ```
@@ -343,7 +343,7 @@ GET: http://localhost:8080/admin/users
 ```
 Autorizados: Moderador
 ```
-### **22.Transformar um usuário em um moderador**
+### **4.2.Transformar um usuário em um moderador**
 ```
 POST: http://localhost:8080/admin/makeusermoderator/userId
 ```
