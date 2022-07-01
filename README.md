@@ -7,7 +7,8 @@ Bootcamp Itaú {Devs} 2022 by [Let's Code](https://letscode.com.br/processos-sel
 	+ [E-mail](artur.gomes.barreto@gmail.com)
 	+ [(85) 99846-4464](https://api.whatsapp.com/send?phone=5585998464464)
 ## Sistema de críticas de filmes
-**Objetivo Geral**: Um sistema que tenha a finalidade de receber e armazenar comentários e notas de filmes. 
+**Objetivo Geral**: Um sistema que tenha a finalidade de receber e armazenar comentários e notas de filmes.
+ 
 **Objetivos Específicos** Nessa API, um usuário pode se cadastrar, receber e armazenar comentários, registrar reações e notas de um filme. Essa API deve autenticar os usuários e realizar a autorização de login. Além disso, oara que um usuário cadastrado possa realizar as operações no seu sistema, ele deve se autenticar.
 
 ## Estrutura do Projeto  
