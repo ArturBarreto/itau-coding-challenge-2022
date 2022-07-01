@@ -26,4 +26,6 @@ public class Commentary {
 
     private Long isResponseToCommenteryId = null;
 
+    private Long isQuotingToCommenteryId = null;
+
 }

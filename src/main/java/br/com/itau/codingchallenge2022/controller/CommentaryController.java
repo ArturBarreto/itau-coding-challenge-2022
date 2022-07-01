@@ -31,6 +31,12 @@ public class CommentaryController {
         userService.updatePointsByCommentary(commentary);
     }
 
+    @PostMapping("/commentary/quotingcommentary/{commentaryId}")
+    public void createQuotingCommentary(@RequestBody Commentary commentary, @PathVariable Long commentaryId) {
+        commentaryService.createQuotingCommentary(commentary, commentaryId);
+        userService.updatePointsByCommentary(commentary);
+    }
+
     @GetMapping("/commentary/")
     public ResponseEntity <List<Commentary>> findAll(){
         return new ResponseEntity<>(commentaryService.findAll(), HttpStatus.OK);

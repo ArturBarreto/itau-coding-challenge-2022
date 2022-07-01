@@ -42,15 +42,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET,"/rating").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.GET,"/rating/movie/**").hasAnyRole("LEITOR")
                 .antMatchers(HttpMethod.GET,"/rating/user/**").hasAnyRole("LEITOR")
-                .antMatchers(HttpMethod.POST,"/rating/").hasAnyRole("LEITOR")
+                .antMatchers(HttpMethod.POST,"/rating").hasAnyRole("LEITOR")
 
                 .antMatchers(HttpMethod.POST,"/commentary").hasAnyRole("BASICO")
                 .antMatchers(HttpMethod.POST,"/commentary/responseto/**").hasAnyRole("BASICO")
+
+                .antMatchers(HttpMethod.POST,"/commentary/quotingcommentary/**").hasAnyRole("AVANCADO")
+                .antMatchers(HttpMethod.POST,"/commentary/likedislike/**").hasAnyRole("AVANCADO")
 
                 .antMatchers(HttpMethod.GET,"/admin/users").hasAnyRole("MODERADOR")
                 .antMatchers(HttpMethod.POST,"/admin/makeusermoderator/**").hasAnyRole("MODERADOR")
                 .antMatchers(HttpMethod.DELETE,"/commentary/**").hasAnyRole("MODERADOR")
                 .antMatchers(HttpMethod.POST,"/commentary/repeated/**").hasAnyRole("MODERADOR")
+                .antMatchers(HttpMethod.GET,"/commentary/likedislike").hasAnyRole("MODERADOR")
 
                 .anyRequest().authenticated()
                 .and()

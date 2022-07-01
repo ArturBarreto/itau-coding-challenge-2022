@@ -27,6 +27,12 @@ public class CommentaryService implements ICommentaryService {
     }
 
     @Override
+    public void createQuotingCommentary(Commentary commentary, Long commentaryId){
+        commentary.setIsQuotingToCommenteryId(commentaryId);
+        commentaryRepository.save(commentary);
+    }
+
+    @Override
     public List<Commentary> findAll(){
         return commentaryRepository.findAll();
     }
