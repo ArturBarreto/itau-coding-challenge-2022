@@ -15,6 +15,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/register")
+    public String welcome(){
+        return "Para registrar-se, forneça um JSON com a seguinte estrutura:\n" +
+                "{\n" +
+                "    \"name\": \"SEU NOME\",\n" +
+                "    \"username\": \"SEU_USER_NAME\",\n" +
+                "    \"password\": \"SUA_SENHA\"\n" +
+                "}\n";
+    }
+
     @PostMapping("/register")
     public void postUser(@RequestBody User user){
         user.getRoles().clear();                // Evitar que o usuário faça um POST atribuindo roles ao perfil criado

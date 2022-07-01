@@ -59,7 +59,32 @@ Desenvolvido por:
 Artur Gomes Barreto
 https://github.com/ArturBarreto/itau-coding-challenge-2022
 ```
-**3.Instruções para Login**
+**2.Instruções para realizar registro**
+```
+GET: http://localhost:8080/register
+```
+*Aparecerá a seguinte resposta do sistema*
+```
+Para registrar-se, forneça um JSON com a seguinte estrutura:
+{
+    "name": "SEU NOME",
+    "username": "SEU_USER_NAME",
+    "password": "SUA_SENHA"
+}
+```
+**3.Realizar registro**
+```
+POST: http://localhost:8080/register
+```
+*Para se registrar, forneça um JSON com a seguinte estrutura:*
+```
+{
+    "name": "SEU NOME",
+    "username": "SEU_USER_NAME",
+    "password": "SUA_SENHA"
+}
+```
+**4.Instruções para Login**
 ```
 GET: http://localhost:8080/login
 ```
@@ -71,7 +96,7 @@ Para fazer login, forneça um JSON com a seguinte estrutura:
     "password": "SUA_SENHA"
 }
 ```
-**4.Executar o Login**
+**5.Executar o Login**
 ```
 POST: http://localhost:8080/login
 ```
