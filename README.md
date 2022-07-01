@@ -41,7 +41,7 @@ As tecnologias/dependências utilizadas neste projeto estão descritas abaixo. P
 | Jackson Core              | Streaming API. Utilizado para consumir o API do OMDB |
 
 ## Funcionalidades
-**1.Tela de boas vindas e instruções iniciais**
+### **1.Tela de boas vindas e instruções iniciais**
 ```
 GET: http://localhost:8080
 ```
@@ -59,7 +59,7 @@ Desenvolvido por:
 Artur Gomes Barreto
 https://github.com/ArturBarreto/itau-coding-challenge-2022
 ```
-**2.Instruções para realizar registro**
+### **2.Instruções para realizar registro**
 ```
 GET: http://localhost:8080/register
 ```
@@ -72,7 +72,7 @@ Para registrar-se, forneça um JSON com a seguinte estrutura:
     "password": "SUA_SENHA"
 }
 ```
-**3.Realizar registro**
+### **3.Realizar registro**
 ```
 POST: http://localhost:8080/register
 ```
@@ -84,11 +84,11 @@ POST: http://localhost:8080/register
     "password": "SUA_SENHA"
 }
 ```
-**4.Instruções para Login**
+### **4.Instruções para Login**
 ```
 GET: http://localhost:8080/login
 ```
-*Aparecerá a seguinte resposta do sistema*
+*Aparecerá a seguinte resposta do sistema:	*
 ```
 Para fazer login, forneça um JSON com a seguinte estrutura:
 {
@@ -96,7 +96,7 @@ Para fazer login, forneça um JSON com a seguinte estrutura:
     "password": "SUA_SENHA"
 }
 ```
-**5.Executar o Login**
+### **5.Executar o Login**
 ```
 POST: http://localhost:8080/login
 ```
@@ -115,3 +115,64 @@ POST: http://localhost:8080/login
 }
 ```
 *Esse token deve ser informado, sem aspas, nas demais requisições para validar suas autorizações de acesso para permitir, ou não, a execução das funcionalidades.*
+### **6.Consultar as informações de um filme no OMDB**
+```
+GET: http://localhost:8080/movie/NOME_DO_FILME_EM_INGLES_AQUI
+```
+*A busca pelo filme na nossa API é feita consultando a OMDb API (https://www.omdbapi.com/)*
+*Os títulos dos filmes deve ser em inglês.*
+*Para uma busca por Matrix,por exemplo, aparecerá a seguinte resposta do sistema:*
+```
+[
+    {
+        "imdbID": "tt0133093",
+        "Title": "The Matrix",
+        "Year": 1999
+    },
+    {
+        "imdbID": "tt0234215",
+        "Title": "The Matrix Reloaded",
+        "Year": 2003
+    },
+    {
+        "imdbID": "tt0242653",
+        "Title": "The Matrix Revolutions",
+        "Year": 2003
+    },
+    {
+        "imdbID": "tt10838180",
+        "Title": "The Matrix Resurrections",
+        "Year": 2021
+    },
+    {
+        "imdbID": "tt0365467",
+        "Title": "Making 'The Matrix'",
+        "Year": 1999
+    },
+    {
+        "imdbID": "tt0295432",
+        "Title": "The Matrix Revisited",
+        "Year": 2001
+    },
+    {
+        "imdbID": "tt0277828",
+        "Title": "Enter the Matrix",
+        "Year": 2003
+    },
+    {
+        "imdbID": "tt9847360",
+        "Title": "A Glitch in the Matrix",
+        "Year": 2021
+    },
+    {
+        "imdbID": "tt0451118",
+        "Title": "The Matrix: Path of Neo",
+        "Year": 2005
+    },
+    {
+        "imdbID": "tt0303678",
+        "Title": "Armitage III: Dual Matrix",
+        "Year": 2002
+    }
+]
+```
