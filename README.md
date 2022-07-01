@@ -59,6 +59,7 @@ Desenvolvido por:
 Artur Gomes Barreto
 https://github.com/ArturBarreto/itau-coding-challenge-2022
 ```
+**3.Instruções para Login**
 ```
 GET: http://localhost:8080/login
 ```
@@ -70,6 +71,7 @@ Para fazer login, forneça um JSON com a seguinte estrutura:
     "password": "SUA_SENHA"
 }
 ```
+**4.Executar o Login**
 ```
 POST: http://localhost:8080/login
 ```
