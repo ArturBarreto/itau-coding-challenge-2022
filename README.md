@@ -59,9 +59,7 @@ Desenvolvido por:
 Artur Gomes Barreto
 https://github.com/ArturBarreto/itau-coding-challenge-2022
 ```
-```
-Autorizados: Todos
-```
+>Autorizados: Todos
 ### **2.Instruções para realizar registro**
 ```
 GET: http://localhost:8080/register
