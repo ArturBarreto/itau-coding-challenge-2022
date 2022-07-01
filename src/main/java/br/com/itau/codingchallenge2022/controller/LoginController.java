@@ -9,6 +9,7 @@ import br.com.itau.codingchallenge2022.security.JWTObject;
 import br.com.itau.codingchallenge2022.security.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,15 @@ public class LoginController {
     private SecurityConfig securityConfig;
     @Autowired
     private UserRepository repository;
+
+    @GetMapping("/login")
+    public String welcome(){
+        return "Para fazer login, forneça um JSON com a seguinte estrutura:\n" +
+                "{\n" +
+                "    \"username\": \"SEU_USER_NAME\",\n" +
+                "    \"password\": \"SUA_SENHA\"\n" +
+                "}\n";
+    }
 
     @PostMapping("/login")
     public Session login(@RequestBody Login login){

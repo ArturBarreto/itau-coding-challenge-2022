@@ -41,7 +41,7 @@ As tecnologias/dependências utilizadas neste projeto estão descritas abaixo. P
 | Jackson Core              | Streaming API. Utilizado para consumir o API do OMDB |
 
 ## Funcionalidades
-1.Tela de boas vindas e instruções iniciais
+**1.Tela de boas vindas e instruções iniciais**
 ```
 GET: http://localhost:8080
 ```
@@ -59,3 +59,32 @@ Desenvolvido por:
 Artur Gomes Barreto
 https://github.com/ArturBarreto/itau-coding-challenge-2022
 ```
+```
+GET: http://localhost:8080/login
+```
+*Aparecerá a seguinte resposta do sistema*
+```
+Para fazer login, forneça um JSON com a seguinte estrutura:
+{
+    "username": "SEU_USER_NAME",
+    "password": "SUA_SENHA"
+}
+```
+```
+POST: http://localhost:8080/login
+```
+*Para fazer login, forneça um JSON com a seguinte estrutura:*
+```
+{
+    "username": "SEU_USER_NAME",
+    "password": "SUA_SENHA"
+}
+```
+*Caso você insira um login e senha válidos, receberá a seguinte resposta*
+```
+{
+    "login": "leitor1",
+    "token": "bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTY2OTQ1ODUsImV4cCI6MTY1NjY5ODE4NSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9MRUlUT1IiXX0.SvuCJFGft9nqhooe6Bu3N1HivFrWp0qunWeEsP8sare-VQrV-Pgehm0fqmRJPjh3EU5i_XRqrYDVXk2KTFYU1A"
+}
+```
+*Esse token deve ser informado, sem aspas, nas demais requisições para validar suas autorizações de acesso para permitir, ou não, a execução das funcionalidades.*
