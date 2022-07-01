@@ -1,7 +1,6 @@
-# Itaú Coding Challenge 2022
-## Bootcamp Itaú {Devs}
-[by Let's Code](https://letscode.com.br/processos-seletivos/itau-bootcamp-dev)
-#### Autor
+## Itaú Coding Challenge 2022
+## Bootcamp Itaú {Devs} [by Let's Code](https://letscode.com.br/processos-seletivos/itau-bootcamp-dev)
+## Autor
 - Artur Gomes Barreto
 	+ [LinkedIn](https://www.linkedin.com/in/arturgomesbarreto/)
 	+ [GitHub](https://github.com/ArturBarreto/itau-coding-challenge-2022)
