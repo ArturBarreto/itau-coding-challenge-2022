@@ -88,7 +88,7 @@ POST: http://localhost:8080/register
 ```
 GET: http://localhost:8080/login
 ```
-*Aparecerá a seguinte resposta do sistema:	*
+*Aparecerá a seguinte resposta do sistema:*
 ```
 Para fazer login, forneça um JSON com a seguinte estrutura:
 {
@@ -137,6 +137,7 @@ GET: http://localhost:8080/commentary/movie/imdbId
 GET: http://localhost:8080/commentary/user/username
 ```
 *Troque username pelo respectivo username do usuário. Por exemplo, o username do "Leitor 1" é leitor1*
+
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 ### **10.Pesquisar todos as notas postadas de todos os filmes**
 ```
@@ -148,12 +149,14 @@ GET: http://localhost:8080/rating
 GET: http://localhost:8080/rating/movie/imdbId
 ```
 *Troque imdbId pelo respectivo id do filme no IMDB. Por exemplo, o imdbId do "The Matrix" é tt0133093*
+
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 ### **12.Pesquisar todas as notas postadas por um usuário específico pelo seu username**
 ```
 GET: http://localhost:8080/rating/user/username
 ```
 *Troque username pelo respectivo username do usuário. Por exemplo, o username do "Leitor 1" é leitor1*
+
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 ### **13.Postar uma nota de um filme**
 ```
@@ -168,6 +171,7 @@ POST: http://localhost:8080/rating
 }
 ```
 *No exemplo acima, o usuário Leitor 1 está postando uma nota 9 para o filme The Matrix*
+
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 
 ### **14.Postar um comentário de um filme**
@@ -183,6 +187,7 @@ POST: http://localhost:8080/commentary
 }
 ```
 *No exemplo acima, o usuário Básico 1 está postando um comentário para o filme The Matrix*
+
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 ### **15.Postar uma resposta a um comentário pelo commentaryId**
 ```
@@ -198,12 +203,14 @@ POST: http://localhost:8080/commentary/responseto/commentaryId
 }
 ```
 *No exemplo acima, o usuário Básico 2 está respondendo a um comentário para o filme The Matrix*
+
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 ### **16.Citar um comentário pelo commentaryId**
 ```
 POST: http://localhost:8080/commentary/quotingcommentary/commentaryId
 ```
 *Troque commentaryId pelo respectivo ID do comentário o qual se deseja citar.*
+
 *Para citar um comentário, forneça um JSON com a seguinte estrutura:*
 ```
 {
@@ -213,12 +220,14 @@ POST: http://localhost:8080/commentary/quotingcommentary/commentaryId
 }
 ```
 *No exemplo acima, o usuário Básico 3 está citando um comentário feito pelo Básico 2 para o filme The Matrix. Considerando que esse é o comentário de ID 2, o path para esse exemplo é http://localhost:8080/commentary/quotingcommentary/2*
+
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 ### **17.Marcar um comentário como "Gostei" ou "Não Gostei" pelo commentaryId**
 ```
 POST: http://localhost:8080/commentary/likedislike/commentaryId
 ```
 *Troque commentaryId pelo respectivo ID do comentário o qual se deseja gostar ou não gostar.*
+
 *Para gostar de um comentário, forneça um JSON com a seguinte estrutura:*
 ```
 {
@@ -234,6 +243,7 @@ POST: http://localhost:8080/commentary/likedislike/commentaryId
 }
 ```
 *Troque USER_NAME pelo username do usuário que está gostando ou não gostando de um comentário.*
+
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 ### **18.Obter uma lista de todos os usuários cadastrados**
 ```
@@ -245,6 +255,7 @@ GET: http://localhost:8080/admin/users
 POST: http://localhost:8080/admin/makeusermoderator/userId
 ```
 *Troque userId pelo respectivo ID do usuário o qual se deseja transformar em moderador.*
+
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 ### **20.Deletar um comentário pelo commentaryId**
 ```
