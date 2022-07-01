@@ -7,7 +7,9 @@ Bootcamp Itaú {Devs} 2022 by [Let's Code](https://letscode.com.br/processos-sel
 	+ [E-mail](artur.gomes.barreto@gmail.com)
 	+ [(85) 99846-4464](https://api.whatsapp.com/send?phone=5585998464464)
 ## Sistema de críticas de filmes
-**Objetivo Geral**: Um sistema que tenha a finalidade de receber e armazenar comentários e notas de filmes.  
+**Objetivo Geral**: Um sistema que tenha a finalidade de receber e armazenar comentários e notas de filmes. 
+**Objetivos Específicos** Nessa API, um usuário pode se cadastrar, receber e armazenar comentários, registrar reações e notas de um filme. Essa API deve autenticar os usuários e realizar a autorização de login. Além disso, oara que um usuário cadastrado possa realizar as operações no seu sistema, ele deve se autenticar.
+
 ## Estrutura do Projeto  
 Em consonância aos princípios do SOLID, adotou-se um padrão de projeto MVC com o objetivo de melhorar a conexão entre as camadas de dados, lógica de negócio e interação com usuário. Além disso, essa abordagem facilita o entendimento e manutenção do código.
 
@@ -24,7 +26,7 @@ Os principais arquivos do projeto estão distribuídos na seguinte hierarquia de
 | service    | Regras de negócio e comunicação com a base de dados via *repositorys*                                                   |
 
 ## Tecnologias / Dependências Utilizadas
-As tecnologias/dependências utilizadas neste projeto estão descritas abaixo. Para mais informações, consultar o arquivo *pom.xml*.
+As tecnologias/dependências utilizadas neste projeto estão descritas abaixo. Para mais informações, consultar o arquivo *pom.xml*. Utilizou-se o Spring Boot 2.7.1.
 | Nome                      | Descrição                          |
 |---------------------------|------------------------------------|
 | Postman                   | API Client utilizada               | 
@@ -37,7 +39,7 @@ As tecnologias/dependências utilizadas neste projeto estão descritas abaixo. P
 | Spring Boot Test          | Testes automatizados               |
 | JSON Web Tokken           | Suporte a criação de Tokens, conforme requisitos do projeto |
 | OpenFeign                 | Cliente REST declarativo para integrar duas APIs. Utilizado para consumir o API do OMDB  |
-| PostgreSQL                | Sistema gerenciador de banco de dados objeto relacional |
+| PostgreSQL Driver         | Sistema gerenciador de banco de dados objeto relacional |
 | Lombok                    | Visa a diminuição de código boilerplate e maior produtividade |
 | Jackson Core              | Streaming API. Utilizado para consumir o API do OMDB |
 
@@ -52,6 +54,7 @@ spring.datasource.password=root
 
 ## Funcionalidades
 Nessa seção, apresentaremos as funcionalidades implementadas no sistema.
+
 ## 1.Gerais
 ### **1.1.Tela de boas vindas e instruções iniciais**
 ```
@@ -353,3 +356,43 @@ POST: http://localhost:8080/admin/makeusermoderator/userId
 ```
 Autorizados: Moderador
 ```
+## Regras de negócio implementadas
+Cada usuário tem um perfil na plataforma, sendo eles: LEITOR, BÁSICO, AVANÇADO e MODERADOR.
+
+Todo usuário começar como LEITOR e pode avançar de perfil conforme a interação com a plataforma. Os usuários vão acumulando perfis ao passo que avançam. Por exemplo, um usuário de perfil avançado também possui os papeis de LEITOR E BÁSICO. 
+
++ LEITOR:
+	+ Após o cadastro, esse usuário poderá logar e buscar por um filme. 
+	+ Ele poderá ver as informações de um filme, comentários e dar uma nota para o filme.
+	+ A cada filme que o usuário avaliar, ele ganha 1 ponto em seu perfil.
++ BÁSICO: 
+	+ O usuário leitor poderá se tornar BÁSICO quando adquirir 20 pontos. 
+	+ Nesse perfil será possível postar comentários, notas e responder comentários. 
+	+ Cada resposta que o usuário enviar, ele ganha 1 ponto.
++ AVANÇADO: 
+	+ O usuário básico poderá se tornar AVANÇADO quando adquirir 100 pontos. 
+	+ Esse perfil tem as capacidades do BÁSICO, e mais citar outros comentários e marcar comentários como “gostei” ou "não gostei”.
++ MODERADOR: 
+	+ Um usuário poderá se tornar MODERADOR de 2 formas: 
+	+ Um moderador torna outro usuário moderador ou 
+	+ Por pontuação, para se tornar MODERADOR o usuário deverá ter 1000 pontos. 
+	+ O moderador tem as capacidades do AVANÇADO, e mais excluir um comentário ou marcar como repetida.
+
+A busca pelo filme na API é feita consultando uma API pública chamada OMDb API (https://www.omdbapi.com/) através do OpenFeign.
+
+Os comentários e notas são salvos no sistema.
+
+Quando a API de críticas receber uma requisição de login com os dados do usuário de login e senha, ela realiza uma autenticação passando as informações de login e senha. Primeiramente, é feito uma validação se aquele login e senha estão corretos. Caso esteja, é gerado um token com as autorizações do usuário.
+
+## Requisitos implementados
++ Um usuário não pode logar sem ter feito um cadastro;
++ Um usuário não pode ver filmes e comentários e notas sem estar logado;
++ Um usuário não pode criar, editar ou excluir comentários e notas sem estar logado;
++ Um usuário de um determinado perfil não pode realizar ações que não fazem parte de seu perfil;
++ Todas as funcionalidades de seu sistema recebem um token de autenticação;
++ Um usuário não autenticado (que não possui o token) não pode realizar ações no sistema;
++ Um usuário com token invalido não pode realizar ações no sistema;
+
+
+
+
