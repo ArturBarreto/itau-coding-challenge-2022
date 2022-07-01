@@ -154,7 +154,10 @@ Autorizados: Todos
 GET: http://localhost:8080/movie/NOME DO FILME EM INGLES AQUI
 ```
 *A busca pelo filme na nossa API é feita consultando a OMDb API (https://www.omdbapi.com/)*.
+
 *Os títulos dos filmes deve ser em inglês.*
+
+*Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 ```
 Autorizados: Leitor, Básico, Avançado e Moderador
 ```
@@ -172,6 +175,7 @@ Autorizados: Leitor, Básico, Avançado e Moderador
 GET: http://localhost:8080/commentary/movie/imdbId
 ```
 *Troque imdbId pelo respectivo id do filme no IMDB. Por exemplo, o imdbId do "The Matrix" é tt0133093*
+
 *Lembre-se de fornecer no Header da requisição uma Key chamada Authorization com o Token gerado no login!*
 ```
 Autorizados: Leitor, Básico, Avançado e Moderador
