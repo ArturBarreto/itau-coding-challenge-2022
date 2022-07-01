@@ -7,8 +7,8 @@ Bootcamp Itaú {Devs} 2022 by [Let's Code](https://letscode.com.br/processos-sel
 	+ [E-mail](artur.gomes.barreto@gmail.com)
 	+ [(85) 99846-4464](https://api.whatsapp.com/send?phone=5585998464464)
 ## Sistema de críticas de filmes
-**Objetivo Geral**: Usistema que tenha a finalidade de receber e armazenar comentários e notas de filmes.  
-### Estrutura do Projeto  
+**Objetivo Geral**: Um sistema que tenha a finalidade de receber e armazenar comentários e notas de filmes.  
+## Estrutura do Projeto  
 Em consonância aos princípios do SOLID, adotou-se um padrão de projeto MVC com o objetivo de melhorar a conexão entre as camadas de dados, lógica de negócio e interação com usuário. Além disso, essa abordagem facilita o entendimento e manutenção do código.
 
 Os principais arquivos do projeto estão distribuídos na seguinte hierarquia de pacotes, cada uma representando uma camada da aplicação.
@@ -23,7 +23,7 @@ Os principais arquivos do projeto estão distribuídos na seguinte hierarquia de
 | security   | Possui a implementação do *JSON Web Tokken* (JWT) e configuração de permissão de acesso as funcionalidades da aplicação |
 | service    | Regras de negócio e comunicação com a base de dados via *repositorys*                                                   |
 
-### Tecnologias / Dependências Utilizadas
+## Tecnologias / Dependências Utilizadas
 As tecnologias/dependências utilizadas neste projeto estão descritas abaixo. Para mais informações, consultar o arquivo *pom.xml*.
 | Nome                      | Descrição                          |
 |---------------------------|------------------------------------|
