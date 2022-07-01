@@ -375,8 +375,8 @@ Todo usuário começar como LEITOR e pode avançar de perfil conforme a interaç
 	+ Esse perfil tem as capacidades do BÁSICO, e mais citar outros comentários e marcar comentários como “gostei” ou "não gostei”.
 + MODERADOR: 
 	+ Um usuário poderá se tornar MODERADOR de 2 formas: 
-	+ Um moderador torna outro usuário moderador ou 
-	+ Por pontuação, para se tornar MODERADOR o usuário deverá ter 1000 pontos. 
+		+ Um moderador torna outro usuário moderador ou 
+		+ Por pontuação, para se tornar MODERADOR o usuário deverá ter 1000 pontos. 
 	+ O moderador tem as capacidades do AVANÇADO, e mais excluir um comentário ou marcar como repetida.
 
 A busca pelo filme na API é feita consultando uma API pública chamada OMDb API (https://www.omdbapi.com/) através do OpenFeign.
