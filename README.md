@@ -26,7 +26,7 @@ Os principais arquivos do projeto estão distribuídos na seguinte hierarquia de
 | security   | Possui a implementação do *JSON Web Tokken* (JWT) e configuração de permissão de acesso as funcionalidades da aplicação |
 | service    | Regras de negócio e comunicação com a base de dados via *repositorys*                                                   |
 
-Para mais informações, consultar o JAVADOC disponibiliado ou os comentários dentro dos códigos.
+Para mais informações, consultar o JAVADOC disponibilizado ou os comentários dentro dos códigos.
 
 ## Tecnologias / Dependências Utilizadas
 As tecnologias/dependências utilizadas neste projeto estão descritas abaixo. Para mais informações, consultar o arquivo *pom.xml*. Utilizou-se o Spring Boot 2.7.1.
