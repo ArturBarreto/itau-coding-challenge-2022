@@ -46,6 +46,33 @@ As tecnologias/dependências utilizadas neste projeto estão descritas abaixo. P
 | Lombok                    | Visa a diminuição de código boilerplate e maior produtividade |
 | Jackson Core              | Streaming API. Utilizado para consumir o API do OMDB |
 
+O JSON Web Token - JWT é um padrão da Internet para a criação de dados com assinatura opcional e/ou criptografia, cujo conteúdo contém o JSON que afirma algum número de declarações. Os tokens são assinados usando um segredo privado ou uma chave pública/privada.
+
+JWT é uma representação divida em 03 partes:
++ Header
+	+ O header ou cabeçalho normalmente consiste em duas partes: o tipo de token, que é JWT e o algoritmo de assinatura que está sendo utilizado, como HMAC SHA256 ou RSA.
+
+```
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
++ Payload
+	* De fato, a estrutura do corpo contendo as informações de autenticação e autorização de um usuário.
+```
+{
+  "sub": "glysns",
+  "name": "GLEYSON SAMPAIO",
+  "roles": ["USERS","MANAGERS"]
+}
+```
++ Signature
+	Para criar a parte da assinatura, você deve pegar o cabeçalho codificado, o payload codificado, a chave secreta, o algoritmo especificado no cabeçalho e assiná-lo.
+	
+Portanto, um JWT normalmente se parece com o seguinte: xxxxx.yyyyy.zzzzz.
+
+
 ## Configuração do banco de dados (PostgreSQL)
 É necessário que o PostgresSQL esteja instalado no sistema e um banco de dados criado. Com essas premissas satisfeitas, deve-ve atualizar o arquivo **application.properties** com as informações do nome do banco de dados criado, bem como o usuáio e senha do Postgre. O trecho de código que deve ser alterado pode ser visto abaixo:
 ```
