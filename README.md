@@ -70,7 +70,7 @@ JWT é uma representação divida em 03 partes:
 ```
 + Signature
 	
-Para criar a parte da assinatura, você deve pegar o cabeçalho codificado, o payload codificado, a chave secreta, o algoritmo especificado no cabeçalho e assiná-lo.
+	+ Para criar a parte da assinatura, você deve pegar o cabeçalho codificado, o payload codificado, a chave secreta, o algoritmo especificado no cabeçalho e assiná-lo.
 	
 Portanto, um JWT normalmente se parece com o seguinte: xxxxx.yyyyy.zzzzz.
 
