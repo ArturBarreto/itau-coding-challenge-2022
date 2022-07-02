@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Esse {@link RestController} é responsável por receber todas
+ * as requisições do usuário em relação as funcionalidades de
+ * registrar, listar e promover usuários.
+ * @author ArturBarreto
+ */
 @RestController
 public class UserController {
 

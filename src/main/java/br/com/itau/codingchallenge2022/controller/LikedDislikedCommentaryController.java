@@ -6,9 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
+/**
+ * Esse {@link RestController} é responsável por receber todas
+ * as requisições do usuário em relação as funcionalidades de
+ * gostar ou não gostar dos comentários.
+ * @author ArturBarreto
+ */
 @RestController
 public class LikedDislikedCommentaryController {
 

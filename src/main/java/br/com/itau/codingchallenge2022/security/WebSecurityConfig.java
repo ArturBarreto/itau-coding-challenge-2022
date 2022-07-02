@@ -11,6 +11,13 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * A classe {@link WebSecurityConfig} é responsável por centralizar
+ * toda a configuração de segurança da API. É aqui que se configura
+ * as autoirzações dos perfis, ou seja, quais funcionalidades estão
+ * habilitadas para cada perfil.
+ * @author ArturBarreto
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)

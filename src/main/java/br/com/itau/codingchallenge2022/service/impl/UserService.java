@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Serviço {@link UserService} referente as regras de negócio dos usuários.
+ * @author ArturBarreto
+ */
 @Service
 public class UserService implements IUserService {
 

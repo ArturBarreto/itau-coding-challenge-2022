@@ -5,7 +5,10 @@ import br.com.itau.codingchallenge2022.model.MovieRating;
 import br.com.itau.codingchallenge2022.model.User;
 
 import java.util.List;
-
+/**
+ * Interface {@link IUserService} do serviço CommentaryService.
+ * @author ArturBarreto
+ */
 public interface IUserService {
     public void createUser(User user);
     public User findByUsername(String username);

@@ -6,6 +6,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * Client HTTP, criado via OpenFeign para o consumo da API do OMDB e consultar informações
+ * de filmes.
+ * @author ArturBarreto
+ */
 @FeignClient(value = "movieMinimalRest", url = "${omdbapi.url}")
 @Repository
 public interface MovieOmdbRepository {

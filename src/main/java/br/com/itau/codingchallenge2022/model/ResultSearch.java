@@ -7,6 +7,15 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * Essa classe {@link ResultSearch} é responsável por representar uma lista de filmes
+ * que é retornado pelo OMDB através de sua API consumida pelo OpenFeign.
+ * Essa classe possui os seguintes campos:
+ *      resultList: Lista de filmes retornados pelo API do OMDB;
+ *      total: Total de filmes retornados;
+ *      response: Booleano que indica se houve resposta.
+ * @author ArturBarreto
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

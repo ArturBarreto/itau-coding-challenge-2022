@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * Serviço {@link CommentaryService} referente as regras de negócio de comentários.
+ * @author ArturBarreto
+ */
 @Service
 public class CommentaryService implements ICommentaryService {
     @Autowired

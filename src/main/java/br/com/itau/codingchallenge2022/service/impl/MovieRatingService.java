@@ -1,6 +1,5 @@
 package br.com.itau.codingchallenge2022.service.impl;
 
-import br.com.itau.codingchallenge2022.model.Commentary;
 import br.com.itau.codingchallenge2022.model.MovieRating;
 import br.com.itau.codingchallenge2022.repository.MovieRatingRepository;
 import br.com.itau.codingchallenge2022.service.IMovieRatingService;
@@ -9,7 +8,11 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+/**
+ * Serviço {@link MovieRatingService} referente as regras de negócio da postagem
+ * de notas de filmes pelos usuários.
+ * @author ArturBarreto
+ */
 @Service
 public class MovieRatingService implements IMovieRatingService {
 

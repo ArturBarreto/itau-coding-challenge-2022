@@ -1,0 +1,9 @@
+br.com.itau.codingchallenge2022
+br.com.itau.codingchallenge2022.controller
+br.com.itau.codingchallenge2022.dto
+br.com.itau.codingchallenge2022.init
+br.com.itau.codingchallenge2022.model
+br.com.itau.codingchallenge2022.repository
+br.com.itau.codingchallenge2022.security
+br.com.itau.codingchallenge2022.service
+br.com.itau.codingchallenge2022.service.impl

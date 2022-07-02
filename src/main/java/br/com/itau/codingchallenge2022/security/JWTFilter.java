@@ -20,6 +20,11 @@ import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
 
+/**
+ * Essa classe {@link JWTFilter} é responsável por toda
+ * a lógica de validação quanto a integridade do token.
+ * @author ArturBarreto
+ */
 public class JWTFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)

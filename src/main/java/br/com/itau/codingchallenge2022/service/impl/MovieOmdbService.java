@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Serviço {@link MovieOmdbService} referente consumo da API do OMDB.
+ * @author ArturBarreto
+ */
 @Service
 public class MovieOmdbService implements IMovieOmdbService {
     @Autowired

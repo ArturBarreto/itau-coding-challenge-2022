@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
+/**
+ * Esse {@link RestController} é responsável por receber todas
+ * as requisições de login, realizá-los e gerar os tokens.
+ * @author ArturBarreto
+ */
 @RestController
 public class LoginController {
 
@@ -42,7 +47,7 @@ public class LoginController {
             if (!passwordOk) {
                 throw new RuntimeException("Senha inválida para o usuário: " + login.getUsername());
             }
-            //Estamos enviando um objeto Sessão para retornar mais informações do usuário
+            // Estamos enviando um objeto Sessão para retornar mais informações do usuário
             Session session = new Session();
             session.setLogin(user.getUsername());
 

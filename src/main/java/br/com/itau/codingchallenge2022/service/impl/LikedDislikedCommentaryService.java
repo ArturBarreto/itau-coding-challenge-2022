@@ -1,16 +1,18 @@
 package br.com.itau.codingchallenge2022.service.impl;
 
-import br.com.itau.codingchallenge2022.model.Commentary;
 import br.com.itau.codingchallenge2022.model.LikedDislikedCommentary;
 import br.com.itau.codingchallenge2022.repository.LikedDislikedCommentaryRepository;
 import br.com.itau.codingchallenge2022.service.ILikedDislikedCommentaryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
+/**
+ * Serviço {@link LikedDislikedCommentaryService} referente as regras de negócio de
+ * marcar um comentário como "gostei" ou "não-gostei".
+ * @author ArturBarreto
+ */
 @Service
 public class LikedDislikedCommentaryService implements ILikedDislikedCommentaryService {
 

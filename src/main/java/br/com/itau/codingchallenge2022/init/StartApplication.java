@@ -1,5 +1,6 @@
 package br.com.itau.codingchallenge2022.init;
 
+import br.com.itau.codingchallenge2022.dto.Login;
 import br.com.itau.codingchallenge2022.model.User;
 import br.com.itau.codingchallenge2022.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Essa classe {@link StartApplication} é responsável por popular o banco de dados
+ * com quatro usuários iniciais, um de cada tipo de perfil. O objetivo é facilitar
+ * os testes das funcionalidades.
+ * @author ArturBarreto
+ */
 @Component
 public class StartApplication implements CommandLineRunner {
     @Autowired

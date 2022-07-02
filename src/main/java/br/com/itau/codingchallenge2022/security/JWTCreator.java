@@ -10,7 +10,13 @@ import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
+import org.springframework.stereotype.Repository;
 
+/**
+ * Essa classe {@link JWTCreator} é responsável por gerar
+ * o Token com base no JWTObject e vice-versa.
+ * @author ArturBarreto
+ */
 public class JWTCreator {
     public static final String HEADER_AUTHORIZATION = "Authorization";
     public static final String ROLES_AUTHORITIES = "authorities";

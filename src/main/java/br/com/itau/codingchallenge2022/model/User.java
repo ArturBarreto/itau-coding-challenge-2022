@@ -8,6 +8,17 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Essa classe {@link User} é responsável por representar um usuário.
+ * Um usuário possui os seguintes campos:
+ *      idUser: Identificador do usuário;
+ *      name: Nome completo do usuário;
+ *      username: Username do usuário (valor único);
+ *      password: A senha do usuário;
+ *      roles: Lista contendo todos os perfis do usuário;
+ *      points: Número de pontos do usuário;
+ * @author ArturBarreto
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

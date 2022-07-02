@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Essa classe {@link JWTObject} representará um objeto para gerar o token.
+ * @author ArturBarreto
+ */
 public class JWTObject {
     private String subject; //nome do usuario
     private Date issuedAt; //data de criação do token

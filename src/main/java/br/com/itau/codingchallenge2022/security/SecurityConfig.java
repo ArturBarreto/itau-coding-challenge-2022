@@ -3,6 +3,11 @@ package br.com.itau.codingchallenge2022.security;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Essa é a classe {@link SecurityConfig} componente que receberá
+ * as propriedades e credenciais do token via application.properties.
+ * @author ArturBarreto
+ */
 @Configuration
 @ConfigurationProperties(prefix = "security.config")
 public class SecurityConfig {

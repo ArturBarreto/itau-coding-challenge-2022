@@ -7,9 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
+/**
+ * Esse {@link RestController} abstrai toda a complexidade de integrações
+ * com o Banco de Dados em uma interface simples e coesa (API REST).
+ * Responsável por receber todas as requisições do usuário em relação
+ * as funcionalidades de comentários.
+ * @author ArturBarreto
+ */
 @RestController
 public class CommentaryController {
 
